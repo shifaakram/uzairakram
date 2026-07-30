@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUA - Institute of Productive Minds</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(-4px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        .animate-fadeIn { animation: fadeIn 0.25s ease-out forwards; }
+        .scrollbar-none::-webkit-scrollbar { display: none; }
+        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-[#111] text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-black min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#161616]/95 backdrop-blur-md border-b border-amber-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="bg-amber-500 p-2 rounded-xl text-black">
+                        <i data-lucide="graduation-cap" class="h-6 w-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-black text-lg tracking-wider text-white block uppercase leading-none">Muhammad Uzair Akram</span>
+                        <span class="text-xs text-amber-500 font-bold tracking-widest block uppercase mt-1">Institute of Productive Minds</span>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="#about" class="text-slate-300 hover:text-amber-500 font-medium text-sm transition tracking-wide">About Platform</a>
+                  
+                    <a href="#core-values" class="text-slate-300 hover:text-amber-500 font-medium text-sm transition tracking-wide">Core Values</a>
+                    <a href="#programs" class="text-slate-300 hover:text-amber-500 font-medium text-sm transition tracking-wide">Programs</a>
+                   
+                    <a href="#calendar" class="text-slate-300 hover:text-amber-500 font-medium text-sm transition tracking-wide">Core Calendar</a>
+                 
+                    
+                    <div id="nav-auth-container">
+                        <button onclick="openLoginModal()" class="bg-amber-500 text-black px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-amber-400 transition shadow-lg shadow-amber-500/10 flex items-center gap-2">
+                            <i data-lucide="log-in" class="h-4 w-4"></i> Student Login
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-amber-500 p-2 focus:outline-none" aria-label="Toggle Navigation Menu">
+                        <i data-lucide="menu" id="menu-icon" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#161616] border-b border-neutral-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">About Platform</a>
+            <a href="#vision-mission" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Vision & Mission</a>
+            <a href="#core-values" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Core Values</a>
+            <a href="#programs" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Programs</a>
+            <a href="#unique-features" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Unique Features</a>
+            <a href="#portal-section" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Class Portal</a>
+            <a href="#calendar" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Annual Calendar</a>
+            <a href="SIR UZIAR (1).pdf" target="_blank" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg text-amber-400 font-bold hover:bg-neutral-800 flex items-center gap-2">
+                <i data-lucide="file-text" class="h-4 w-4"></i> Download Prospectus (PDF)
+            </a>
+            <div id="mobile-auth-container">
+                <button onclick="toggleMobileMenu(); openLoginModal();" class="w-full text-center bg-amber-500 text-black px-4 py-3 rounded-xl font-bold">Student Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <header class="relative bg-gradient-to-b from-[#161616] via-[#121212] to-[#111] pt-16 pb-24 border-b border-neutral-900 overflow-hidden">
+            <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px]"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center relative z-10">
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase tracking-widest">
+                        <i data-lucide="shield" class="h-3.5 w-3.5"></i> Guidance & Counseling Platform
+                    </span>
+                    <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-none uppercase">
+                        To Nurture Timely, <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">Productive Individuals</span> <br />
+                        for the Ummah
+                    </h1>
+                    <p class="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed">
+                        Equipping parents with a clear structural roadmap to help their children achieve higher education, technology competence, and holistic development at an early age.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#enroll" class="bg-amber-500 hover:bg-amber-400 text-black font-extrabold px-8 py-4 rounded-xl transition shadow-xl shadow-amber-500/20 uppercase tracking-wide text-sm">Enroll Online Now</a>
+                        <a href="SIR UZIAR (1).pdf" target="_blank" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 text-slate-200 font-extrabold px-6 py-4 rounded-xl transition uppercase tracking-wide text-sm flex items-center gap-2">
+                            <i data-lucide="download" class="h-4 w-4 text-amber-500"></i> Download Prospectus
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                        <div class="relative p-1.5 rounded-full bg-gradient-to-b from-neutral-800 to-neutral-950 border border-neutral-800 shadow-2xl">
+                            <div class="rounded-full overflow-hidden border-2 border-amber-500/40 group-hover:border-amber-500 transition duration-500 w-72 h-72 sm:w-80 sm:h-80">
+                                <img src="https://i.ibb.co/r2N96F5W/profile.jpg" alt="Muhammad Uzair Akram" class="w-full h-full object-cover transition duration-500 object-top bg-neutral-950" onerror="this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=600';">
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <h3 class="text-white font-black uppercase text-xl tracking-wide">Muhammad Uzair Akram</h3>
+                            <p class="text-amber-500 text-xs font-bold tracking-widest uppercase mt-0.5">Founder & Educational Counselor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-neutral-900 to-neutral-950 rounded-3xl border border-neutral-800 p-8 sm:p-12 grid md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-4 space-y-2">
+                    <span class="text-xs uppercase font-bold tracking-widest text-amber-500">Overview</span>
+                    <h2 class="text-3xl font-black text-white uppercase tracking-tight">About Our Platform</h2>
+                </div>
+                <div class="md:col-span-8">
+                    <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
+                        The Institute of Productive Minds is currently a guidance and counseling platform. We provide parents and students with online facilities for timely education, computer courses, physical training, religious studies, social sciences, and community service opportunities.
+                    </p>
+                    <div class="mt-4 p-4 bg-amber-500/5 border border-amber-500/10 rounded-xl text-sm text-amber-400 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <strong>Note:</strong> The institute does not operate as a formal school or college; instead, it equips parents with a clear roadmap to facilitate early-age high achievement.
+                        </div>
+                        <a href="SIR UZIAR (1).pdf" target="_blank" class="shrink-0 text-xs font-bold bg-amber-500 text-black px-4 py-2 rounded-lg hover:bg-amber-400 transition flex items-center gap-1.5">
+                            <i data-lucide="file-text" class="h-4 w-4"></i> Read Prospectus
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Mission Section -->
+        <section id="vision-mission" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-neutral-900">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-[#161616] border border-neutral-800 p-8 rounded-3xl relative overflow-hidden group hover:border-amber-500/40 transition">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="eye" class="h-6 w-6"></i>
+                    </div>
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Our Foundation</span>
+                    <h3 class="text-2xl font-black text-white uppercase mb-4">Vision</h3>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        To nurture timely, productive individuals for the Ummah.
+                    </p>
+                </div>
+
+                <div class="bg-[#161616] border border-neutral-800 p-8 rounded-3xl relative overflow-hidden group hover:border-amber-500/40 transition">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="target" class="h-6 w-6"></i>
+                    </div>
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Our Purpose</span>
+                    <h3 class="text-2xl font-black text-white uppercase mb-4">Mission</h3>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        Providing students with timely access to higher education, modern technological skills, social sciences, physical strength, spiritual and ethical training, and opportunities for community service, so that by the age of 18 they become valuable assets for the Ummah.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <section id="core-values" class="py-20 bg-[#161616] border-y border-neutral-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Pillars of Growth</span>
+                    <h2 class="text-3xl font-black text-white uppercase tracking-tight">Core Values</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="heart" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Faith & Devotion</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Strengthening worship, spiritual grounding, and Islamic values.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="book-open" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Knowledge & Skills</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Academic excellence combined with modern skills and languages.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="cpu" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Technology & Innovation</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Early mastery of digital tools, coding, and creative tech.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="user-check" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Character Building</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Instilling honesty, patience, leadership, and moral integrity.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="activity" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Physical Strength</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Building fitness, martial arts discipline, and athletic health.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="globe" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Social Sciences & Welfare</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Understanding social issues, governance, and community structures.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="users" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Community Service</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Active participation in civic welfare and social aid projects.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="shield" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Asset for the Ummah</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Preparing impactful leaders and contributors for society.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs & Curriculum Section -->
+        <section id="programs" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Educational Framework</span>
+                <h2 class="text-3xl font-black text-white uppercase tracking-tight">Programs & Curriculum</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-[#161616] border border-neutral-800 p-6 rounded-2xl hover:border-amber-500/40 transition">
+                    <div class="text-amber-500 font-mono font-bold text-sm mb-2">01</div>
+                    <h4 class="text-lg font-bold text-white uppercase mb-2">Accelerated Learning</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Fast-track educational roadmap allowing completion of Matric & Intermediate by age 14.</p>
+                </div>
+
+                <div class="bg-[#161616] border border-neutral-800 p-6 rounded-2xl hover:border-amber-500/40 transition">
+                    <div class="text-amber-500 font-mono font-bold text-sm mb-2">02</div>
+                    <h4 class="text-lg font-bold text-white uppercase mb-2">University Admission by Age 15</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Direct path toward early higher education enrollment and specialized degree pathways.</p>
+                </div>
+
+                <div class="bg-[#161616] border border-neutral-800 p-6 rounded-2xl hover:border-amber-500/40 transition">
+                    <div class="text-amber-500 font-mono font-bold text-sm mb-2">03</div>
+                    <h4 class="text-lg font-bold text-white uppercase mb-2">Computer Courses</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Practical training in software, coding, and tech certifications (Aptech, Bano Qabil, etc.).</p>
+                </div>
+
+                <div class="bg-[#161616] border border-neutral-800 p-6 rounded-2xl hover:border-amber-500/40 transition">
+                    <div class="text-amber-500 font-mono font-bold text-sm mb-2">04</div>
+                    <h4 class="text-lg font-bold text-white uppercase mb-2">Physical Training</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Martial arts training including Taekwondo, agility drills, and competitive sports guidance.</p>
+                </div>
+
+                <div class="bg-[#161616] border border-neutral-800 p-6 rounded-2xl hover:border-amber-500/40 transition">
+                    <div class="text-amber-500 font-mono font-bold text-sm mb-2">05</div>
+                    <h4 class="text-lg font-bold text-white uppercase mb-2">Quran & Religious Studies</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Comprehensive Quranic recitation, Islamic history, and foundational spiritual studies.</p>
+                </div>
+
+                <div class="bg-[#161616] border border-neutral-800 p-6 rounded-2xl hover:border-amber-500/40 transition">
+                    <div class="text-amber-500 font-mono font-bold text-sm mb-2">06</div>
+                    <h4 class="text-lg font-bold text-white uppercase mb-2">Social Sciences & Community Service</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Understanding social development structures alongside active hands-on welfare projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unique Features Section -->
+        <section id="unique-features" class="py-20 bg-[#161616] border-t border-neutral-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Key Differentiators</span>
+                    <h2 class="text-3xl font-black text-white uppercase tracking-tight">Unique Features</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-[#111] border border-amber-500/20 p-6 rounded-2xl relative">
+                        <h4 class="text-amber-400 font-black text-base uppercase mb-2">Accelerated Learning</h4>
+                        <p class="text-slate-300 text-xs leading-relaxed">Fast-track completion of primary and secondary education without compromising core concept depth.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-amber-500/20 p-6 rounded-2xl relative">
+                        <h4 class="text-amber-400 font-black text-base uppercase mb-2">Holistic Development</h4>
+                        <p class="text-slate-300 text-xs leading-relaxed">Balanced focus across academic, physical, ethical, and social training dimensions.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-amber-500/20 p-6 rounded-2xl relative">
+                        <h4 class="text-amber-400 font-black text-base uppercase mb-2">Global Standards</h4>
+                        <p class="text-slate-300 text-xs leading-relaxed">Curriculum aligned with international models such as UNESCO, World Bank, and INEE frameworks.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div class="bg-[#111] border border-amber-500/20 p-6 rounded-2xl relative">
+                        <h4 class="text-amber-400 font-black text-base uppercase mb-2">Social Sciences Emphasis</h4>
+                        <p class="text-slate-300 text-xs leading-relaxed">Targeted preparation for future policymakers, educators, researchers, and community leaders.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-amber-500/20 p-6 rounded-2xl relative">
+                        <h4 class="text-amber-400 font-black text-base uppercase mb-2">Community Service Integration</h4>
+                        <p class="text-slate-300 text-xs leading-relaxed">Students actively participate in real-world relief drives, welfare projects, and civic action.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STUDENT CLASS PORTAL SECTION -->
+        <section id="portal-section" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- State 1: Locked View -->
+            <div id="locked-view" class="bg-[#161616] border border-neutral-800 rounded-3xl p-12 text-center max-w-3xl mx-auto shadow-2xl relative overflow-hidden">
+                <div class="w-16 h-16 bg-amber-500/10 border border-amber-500/20 text-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="lock" class="h-8 w-8"></i>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mb-3">Class Subject Portal Restricted</h2>
+                <p class="text-slate-400 text-sm max-w-lg mx-auto mb-8 leading-relaxed">
+                    Please log in using your registered Student ID.
+                </p>
+                <button onclick="openLoginModal()" class="bg-amber-500 hover:bg-amber-400 text-black font-extrabold px-8 py-3.5 rounded-xl transition shadow-lg shadow-amber-500/10 uppercase text-xs tracking-wider inline-flex items-center gap-2">
+                    <i data-lucide="user-check" class="h-4 w-4"></i> Enter Portal Credentials
+                </button>
+            </div>
+
+            <!-- State 2: Authenticated / Logged In Dashboard -->
+            <div id="student-dashboard" class="hidden space-y-8 animate-fadeIn">
+                <div class="bg-gradient-to-r from-neutral-900 via-[#161616] to-neutral-900 border border-amber-500/30 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-2xl bg-amber-500 text-black font-black text-xl flex items-center justify-center shadow-lg shadow-amber-500/20" id="student-avatar-grade">
+                            --
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h2 class="text-2xl font-black text-white uppercase" id="student-display-name">Welcome Student</h2>
+                                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">Active Student</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Student ID: <span id="student-display-id" class="text-amber-400 font-mono font-bold">STD-XX</span> | Class Track: <span id="student-display-class" class="text-white font-bold">Grade --</span>
+                            </p>
+                        </div>
+                    </div>
+                    <button onclick="logoutStudent()" class="bg-neutral-900 hover:bg-red-500/10 border border-neutral-800 hover:border-red-500/30 text-slate-400 hover:text-red-400 text-xs font-bold px-4 py-2.5 rounded-xl transition flex items-center gap-2">
+                        <i data-lucide="log-out" class="h-4 w-4"></i> Sign Out
+                    </button>
+                </div>
+
+                <div>
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-6">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-widest block">Class Subject Portal</span>
+                            <h3 class="text-2xl font-black text-white uppercase" id="dashboard-class-title">Grade Subject Lectures & Worksheets</h3>
+                        </div>
+                        <span class="inline-flex items-center gap-2 text-xs font-bold bg-neutral-900 text-slate-300 border border-neutral-800 px-3 py-1.5 rounded-lg w-fit" id="dashboard-track-badge">
+                            Academic Track
+                        </span>
+                    </div>
+
+                    <div id="subjects-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Annual Value Integration Plan -->
+        <section id="calendar" class="py-20 bg-[#161616] border-y border-neutral-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Integration</span>
+                    <h2 class="text-3xl font-black text-white uppercase tracking-tight">Annual Value Integration Plan</h2>
+                    <p class="text-slate-400 mt-2 text-xs sm:text-sm">Select a month below to view its specific core focus, activities, and assessment roadmap.</p>
+                </div>
+                
+                <div class="bg-[#111] rounded-3xl border border-neutral-800 overflow-hidden shadow-xl">
+                    <div class="flex border-b border-neutral-800 bg-neutral-900/50 p-2 gap-1 overflow-x-auto scrollbar-none">
+                        <button onclick="switchTab('JAN')" id="btn-JAN" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white shrink-0">JAN</button>
+                        <button onclick="switchTab('FEB')" id="btn-FEB" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white shrink-0">FEB</button>
+                        <button onclick="switchTab('MAR')" id="btn-MAR" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white shrink-0">MAR</button>
+                        <button onclick="switchTab('APR')" id="btn-APR" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white shrink-0">APR</button>
+                        <button onclick="switchTab('MAY')" id="btn-MAY" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white shrink-0">MAY</button>
+                        <button onclick="switchTab('JUN')" id="btn-JUN" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white shrink-0">JUN</button>
+                        <button onclick="switchTab('JUL')" id="btn-JUL" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white shrink-0">JUL</button>
+                        <button onclick="switchTab('AUG')" id="btn-AUG" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white shrink-0">AUG</button>
+                        <button onclick="switchTab('SEP')" id="btn-SEP" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white shrink-0">SEP</button>
+                        <button onclick="switchTab('OCT')" id="btn-OCT" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white shrink-0">OCT</button>
+                        <button onclick="switchTab('NOV')" id="btn-NOV" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white shrink-0">NOV</button>
+                        <button onclick="switchTab('DEC')" id="btn-DEC" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white shrink-0">DEC</button>
+                    </div>
+                    
+                    <div id="content-placeholder" class="p-10 text-center flex flex-col items-center justify-center min-h-[220px]">
+                        <span class="text-amber-500 font-bold text-sm uppercase tracking-widest mb-1">Interactive Syllabus Map</span>
+                        <p class="text-slate-400 text-sm">Click any month tab above to display its individual integration schedule.</p>
+                    </div>
+
+                    <div id="content-JAN" class="tab-content hidden p-6 sm:p-10 grid md:grid-cols-2 gap-8 animate-fadeIn">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider block mb-1">Annual Cycle • Focus Area</span>
+                            <h3 class="text-2xl font-black text-white uppercase">Faith & Devotion</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-semibold">Strengthening Worship & Core Islamic Values</p>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-neutral-800 pt-4 md:pt-0 md:pl-8 space-y-3">
+                            <p class="text-slate-300 text-sm"><strong>Activities:</strong> Quran classes, daily prayer tracking, moral discussions, and Islamic history sessions.</p>
+                            <p class="text-slate-300 text-sm"><strong>Assessment:</strong> Prayer discipline, Quran recitation accuracy, and behavioral feedback.</p>
+                        </div>
+                    </div>
+
+                    <div id="content-FEB" class="tab-content hidden p-6 sm:p-10 grid md:grid-cols-2 gap-8 animate-fadeIn">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider block mb-1">Annual Cycle • Focus Area</span>
+                            <h3 class="text-2xl font-black text-white uppercase">Knowledge & Skills</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-semibold">Academic Acceleration + Computer + Language Proficiency</p>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-neutral-800 pt-4 md:pt-0 md:pl-8 space-y-3">
+                            <p class="text-slate-300 text-sm"><strong>Activities:</strong> Intensive coding bootcamps, academic research projects, and language communication workshops.</p>
+                            <p class="text-slate-300 text-sm"><strong>Assessment:</strong> Skill certification, academic examinations, and technical project presentations.</p>
+                        </div>
+                    </div>
+
+                    <div id="content-MAR" class="tab-content hidden p-6 sm:p-10 grid md:grid-cols-2 gap-8 animate-fadeIn">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider block mb-1">Annual Cycle • Focus Area</span>
+                            <h3 class="text-2xl font-black text-white uppercase">Character Building</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-semibold">Honesty, Patience, Integrity & Cooperation Focus</p>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-neutral-800 pt-4 md:pt-0 md:pl-8 space-y-3">
+                            <p class="text-slate-300 text-sm"><strong>Activities:</strong> Moral role-plays, collaborative group projects, peer mentoring, and ethics debate sessions.</p>
+                            <p class="text-slate-300 text-sm"><strong>Assessment:</strong> Behavioral observation rubrics, reflective journaling, and peer evaluation matrices.</p>
+                        </div>
+                    </div>
+
+                    <div id="content-APR" class="tab-content hidden p-6 sm:p-10 grid md:grid-cols-2 gap-8 animate-fadeIn">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider block mb-1">Annual Cycle • Focus Area</span>
+                            <h3 class="text-2xl font-black text-white uppercase">Community Service</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-semibold">Social Responsibility & Hands-On Civic Engagement</p>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-neutral-800 pt-4 md:pt-0 md:pl-8 space-y-3">
+                            <p class="text-slate-300 text-sm"><strong>Activities:</strong> Orphanage visits, local charity food drives, neighborhood cleanups, and community aid initiatives.</p>
+                            <p class="text-slate-300 text-sm"><strong>Assessment:</strong> Project participation hours, community leader feedback, and impact reports.</p>
+                        </div>
+                    </div>
+
+                    <div id="content-MAY" class="tab-content hidden p-6 sm:p-10 grid md:grid-cols-2 gap-8 animate-fadeIn">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider block mb-1">Annual Cycle • Focus Area</span>
+                            <h3 class="text-2xl font-black text-white uppercase">Physical Strength</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-semibold">Healthy Body, Martial Arts & Athletics Focus</p>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-neutral-800 pt-4 md:pt-0 md:pl-8 space-y-3">
+                            <p class="text-slate-300 text-sm"><strong>Activities:</strong> Taekwondo training, daily physical exercise routines, agility drills, and sports competitions.</p>
+                            <p class="text-slate-300 text-sm"><strong>Assessment:</strong> Standardized physical fitness tests, martial arts belt grading, and tournament performance.</p>
+                        </div>
+                    </div>
+
+                    <div id="content-JUN" class="tab-content hidden p-6 sm:p-10 grid md:grid-cols-2 gap-8 animate-fadeIn">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider block mb-1">Annual Cycle • Focus Area</span>
+                            <h3 class="text-2xl font-black text-white uppercase">Technology & Innovation</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-semibold">Modern Tech, Artificial Intelligence & Functional Creativity</p>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-neutral-800 pt-4 md:pt-0 md:pl-8 space-y-3">
+                            <p class="text-slate-300 text-sm"><strong>Activities:</strong> Youth hackathons, robotics labs, AI/Data mini-projects, and tech innovation challenges.</p>
+                            <p class="text-slate-300 text-sm"><strong>Assessment:</strong> Working software/hardware prototypes, code quality, and live project demos.</p>
+                        </div>
+                    </div>
+
+                    <div id="content-JUL" class="tab-content hidden p-6 sm:p-10 grid md:grid-cols-2 gap-8 animate-fadeIn">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider block mb-1">Annual Cycle • Focus Area</span>
+                            <h3 class="text-2xl font-black text-white uppercase">Social Sciences & Welfare</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-semibold">Understanding Social Issues & Civic Structures</p>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-neutral-800 pt-4 md:pt-0 md:pl-8 space-y-3">
+                            <p class="text-slate-300 text-sm"><strong>Activities:</strong> Sociology workshops, community welfare surveys, model parliamentary debates, and policy case studies.</p>
+                            <p class="text-slate-300 text-sm"><strong>Assessment:</strong> Analytical research reports, survey analysis, and debate performance evaluations.</p>
+                        </div>
+                    </div>
+
+                    <div id="content-AUG" class="tab-content hidden p-6 sm:p-10 grid md:grid-cols-2 gap-8 animate-fadeIn">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider block mb-1">Annual Cycle • Focus Area</span>
+                            <h3 class="text-2xl font-black text-white uppercase">Asset for the Ummah</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-semibold">Preparing Valuable, Action-Oriented Contributors</p>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-neutral-800 pt-4 md:pt-0 md:pl-8 space-y-3">
+                            <p class="text-slate-300 text-sm"><strong>Activities:</strong> Leadership training intensives, social entrepreneurship labs, and youth volunteering networks.</p>
+                            <p class="text-slate-300 text-sm"><strong>Assessment:</strong> Capstone project reviews, overall leadership evaluations, and mentor feedback.</p>
+                        </div>
+                    </div>
+
+                    <div id="content-SEP" class="tab-content hidden p-6 sm:p-10 grid md:grid-cols-2 gap-8 animate-fadeIn">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider block mb-1">Annual Cycle • Focus Area</span>
+                            <h3 class="text-2xl font-black text-white uppercase">Review & Synthesis</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-semibold">Consolidating Faith, Tech, & Academics</p>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-neutral-800 pt-4 md:pt-0 md:pl-8 space-y-3">
+                            <p class="text-slate-300 text-sm"><strong>Activities:</strong> Cross-disciplinary workshops, mid-year review sessions, and portfolio assembly.</p>
+                            <p class="text-slate-300 text-sm"><strong>Assessment:</strong> Student self-assessments, portfolio reviews, and academic progress tracking.</p>
+                        </div>
+                    </div>
+
+                    <div id="content-OCT" class="tab-content hidden p-6 sm:p-10 grid md:grid-cols-2 gap-8 animate-fadeIn">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider block mb-1">Annual Cycle • Focus Area</span>
+                            <h3 class="text-2xl font-black text-white uppercase">Application & Practice</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-semibold">Real-World Execution of Values & Skills</p>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-neutral-800 pt-4 md:pt-0 md:pl-8 space-y-3">
+                            <p class="text-slate-300 text-sm"><strong>Activities:</strong> Internship simulations, student-led workshops, and practical problem-solving sprints.</p>
+                            <p class="text-slate-300 text-sm"><strong>Assessment:</strong> Practical execution grading, peer reviews, and performance metrics.</p>
+                        </div>
+                    </div>
+
+                    <div id="content-NOV" class="tab-content hidden p-6 sm:p-10 grid md:grid-cols-2 gap-8 animate-fadeIn">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider block mb-1">Annual Cycle • Focus Area</span>
+                            <h3 class="text-2xl font-black text-white uppercase">Presentation & Showcase</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-semibold">Demonstrating Annual Growth & Achievements</p>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-neutral-800 pt-4 md:pt-0 md:pl-8 space-y-3">
+                            <p class="text-slate-300 text-sm"><strong>Activities:</strong> Science & Tech fairs, public speaking exhibitions, and community showcase events.</p>
+                            <p class="text-slate-300 text-sm"><strong>Assessment:</strong> Presentation scoring, public/parent audience evaluations, and award recognitions.</p>
+                        </div>
+                    </div>
+
+                    <div id="content-DEC" class="tab-content hidden p-6 sm:p-10 grid md:grid-cols-2 gap-8 animate-fadeIn">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider block mb-1">Annual Cycle • Focus Area</span>
+                            <h3 class="text-2xl font-black text-white uppercase">Annual Integration & Roadmap</h3>
+                            <p class="text-slate-400 text-sm mt-1 font-semibold">Consolidating All Values & Planning Ahead</p>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-neutral-800 pt-4 md:pt-0 md:pl-8 space-y-3">
+                            <p class="text-slate-300 text-sm"><strong>Activities:</strong> Grand Annual Fair, student portfolio presentations, parent-teacher counseling sessions, and success celebrations.</p>
+                            <p class="text-slate-300 text-sm"><strong>Assessment:</strong> Comprehensive Annual Progress Report, success story documentation, and upcoming year roadmap approval.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Success Stories Section -->
+        <section id="achievements" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Track Record</span>
+                <h2 class="text-3xl font-black text-white uppercase tracking-tight">Student Success Achievements</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- CLICKABLE AENA CARD -->
+                <div onclick="openStudentShowcaseTab('aena')" class="bg-[#161616] p-8 rounded-3xl border border-neutral-800 relative overflow-hidden cursor-pointer hover:border-amber-500/60 hover:bg-neutral-900/60 transition group shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="absolute top-0 right-0 bg-amber-500 text-black text-xs font-black uppercase px-4 py-1.5 rounded-bl-xl">15 Years Old</div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <h3 class="text-2xl font-black text-white uppercase tracking-wide group-hover:text-amber-400 transition">Aena</h3>
+                            <i data-lucide="external-link" class="h-4 w-4 text-amber-500 transition"></i>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Pursuing BSCP</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> National Taekwondo Silver Medalist</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Finished core Tech & Quran tracks</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Active in social field services</li>
+                        </ul>
+                    </div>
+                    <span class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 group-hover:underline">
+                        Open Full Showcase Page in New Tab <i data-lucide="arrow-up-right" class="h-3.5 w-3.5"></i>
+                    </span>
+                </div>
+
+                <!-- CLICKABLE HAJRAH CARD -->
+                <div onclick="openStudentShowcaseTab('hajrah')" class="bg-[#161616] p-8 rounded-3xl border border-neutral-800 relative overflow-hidden cursor-pointer hover:border-amber-500/60 hover:bg-neutral-900/60 transition group shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="absolute top-0 right-0 bg-amber-500 text-black text-xs font-black uppercase px-4 py-1.5 rounded-bl-xl">12 Years Old</div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <h3 class="text-2xl font-black text-white uppercase tracking-wide group-hover:text-amber-400 transition">Hajrah</h3>
+                            <i data-lucide="external-link" class="h-4 w-4 text-amber-500 transition"></i>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Passed Grade 9 successfully</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Active Taekwondo Medalist</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Completed computer & Quran studies</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Engaged in community relief aid</li>
+                        </ul>
+                    </div>
+                    <span class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 group-hover:underline">
+                        Open Full Showcase Page in New Tab <i data-lucide="arrow-up-right" class="h-3.5 w-3.5"></i>
+                    </span>
+                </div>
+
+                <!-- CLICKABLE BARKAH CARD -->
+                <div onclick="openStudentShowcaseTab('barkah')" class="bg-[#161616] p-8 rounded-3xl border border-neutral-800 relative overflow-hidden cursor-pointer hover:border-amber-500/60 hover:bg-neutral-900/60 transition group shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="absolute top-0 right-0 bg-amber-500 text-black text-xs font-black uppercase px-4 py-1.5 rounded-bl-xl">07 Years Old</div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <h3 class="text-2xl font-black text-white uppercase tracking-wide group-hover:text-amber-400 transition">Barkah</h3>
+                            <i data-lucide="external-link" class="h-4 w-4 text-amber-500 transition"></i>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                            Currently being systematically nurtured under the exact same early acceleration framework model to hit key future targets early.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 group-hover:underline">
+                        Open Full Showcase Page in New Tab <i data-lucide="arrow-up-right" class="h-3.5 w-3.5"></i>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enrollment Intake Section -->
+        <section id="enroll" class="py-20 bg-[#161616] border-t border-neutral-900">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="form-success" class="hidden text-center py-8 space-y-4">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto">
+                        <i data-lucide="check-circle" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white uppercase">Inquiry Recorded Successfully</h3>
+                    <p class="text-slate-400 text-sm">Thank you! Click below to open a direct WhatsApp connection with our team.</p>
+                    <a id="whatsapp-direct-btn" href="https://wa.me/923122934347?text=Assalam-o-Alaikum!%20I%20have%20submitted%20the%20admissions%20form%20for%20Institute%20of%20Productive%20Minds." target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold px-6 py-3 rounded-xl text-sm transition">
+                        💬 Open Direct WhatsApp Chat
+                    </a>
+                </div>
+
+                <div class="mt-8 text-center bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+                    <p class="text-slate-300 text-sm font-medium mb-3">Have questions about admissions or the curriculum?</p>
+                    <a href="https://wa.me/923122934347?text=Assalam-o-Alaikum!%20I%20have%20a%20question%20regarding%20the%20Institute%20of%20Productive%20Minds." target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold px-6 py-3 rounded-xl text-sm transition shadow-lg">
+                        💬 Contact Us Directly
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Student Authentication Modal -->
+    <div id="login-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-[#161616] border border-neutral-800 rounded-3xl p-8 max-w-md w-full relative shadow-2xl animate-fadeIn">
+            <button onclick="closeLoginModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="h-5 w-5"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/20 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <i data-lucide="shield-check" class="h-6 w-6"></i>
+                </div>
+                <h3 class="text-xl font-black text-white uppercase">Portal Access Login</h3>
+                <p class="text-xs text-slate-400 mt-1">Enter your assigned Student ID to access your subject-specific lectures and tests.</p>
+            </div>
+
+            <form onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Student ID</label>
+                    <input type="text" id="login-id" required placeholder="" class="w-full bg-[#111] border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition uppercase font-mono">
+                </div>
+
+                <div id="login-error" class="hidden text-xs font-bold text-red-400 bg-red-500/10 border border-red-500/20 p-3 rounded-xl text-center">
+                    Invalid Student ID.
+                </div>
+
+                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-black font-extrabold py-3.5 rounded-xl transition uppercase tracking-wide text-xs shadow-lg shadow-amber-500/10">
+                    Authenticate & Enter
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SUB-WORKSHEETS SELECTION MODAL -->
+    <div id="worksheets-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-[#161616] border border-amber-500/30 rounded-3xl p-6 sm:p-8 max-w-2xl w-full relative shadow-2xl animate-fadeIn max-h-[90vh] flex flex-col">
+            <button onclick="closeWorksheetsModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white p-1">
+                <i data-lucide="x" class="h-6 w-6"></i>
+            </button>
+
+            <div class="text-left mb-6">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-10 h-10 bg-amber-500/10 border border-amber-500/20 text-amber-500 rounded-xl flex items-center justify-center">
+                        <i data-lucide="folder-open" class="h-5 w-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-white uppercase" id="modal-grade-title">Worksheets Repository</h3>
+                        <p class="text-xs text-amber-500 font-bold uppercase tracking-wider">Select a worksheet below to open PDF</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="worksheets-list" class="space-y-3 overflow-y-auto pr-2 flex-grow">
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-neutral-800 flex justify-end">
+                <button onclick="closeWorksheetsModal()" class="bg-neutral-900 hover:bg-neutral-800 text-slate-300 font-bold px-6 py-2.5 rounded-xl text-xs transition border border-neutral-800">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-neutral-900 bg-[#111] py-8 text-center text-xs text-slate-500 flex flex-col items-center gap-2">
+        <p>&copy; 2026 Institute of Productive Minds. All rights reserved.</p>
+        <a href="SIR UZIAR (1).pdf" target="_blank" class="text-amber-500 hover:underline">Download Official Prospectus (PDF)</a>
+    </footer>
+
+    <!-- Script to Generate Student Showcase Page in New Tab -->
+    <script>
+        const SHOWCASE_DATA = {
+            aena: {
+                name: "Aena",
+                age: 15,
+                subtitle: "Systematic Progress, Academic Acceleration & Competitive Martial Arts Portfolio",
+                milestones: [
+                    {
+                        period: "2023 - 2024",
+                        title: "Foundational Acceleration & Taekwondo Honors",
+                        desc: "Completed foundational web development coursework and core Quranic recitation studies. Earned early competition honors in local Taekwondo championships."
+                    },
+                    {
+                        period: "2024 - 2025",
+                        title: "National Silver Medal & Higher Tech Track",
+                        desc: "Secured National Taekwondo Silver Medal. Finished advanced computer science modules and led community relief initiatives for youth."
+                    },
+                    {
+                        period: "2025 - Present",
+                        title: "Pursuing BSCP & Advanced Community Service",
+                        desc: "Currently pursuing Bachelor-level computer studies (BSCP) at age 15 while actively executing field services and mentorship programs."
+                    }
+                ],
+                gallery: [
+                    {
+                        img: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&q=80&w=800",
+                        caption: "National Taekwondo Competition & Silver Medal Achievement"
+                    },
+                    {
+                        img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800",
+                        caption: "Advanced Computer Science & Academic Lab Sessions"
+                    },
+                    {
+                        img: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=800",
+                        caption: "Youth Civic Mentorship & Community Field Service"
+                    }
+                ]
+            },
+            hajrah: {
+                name: "Hajrah",
+                age: 12,
+                subtitle: "Early Academic Advancement, Taekwondo Mastery & Community Leadership",
+                milestones: [
+                    {
+                        period: "2023 - 2024",
+                        title: "Computer & Quranic Foundation",
+                        desc: "Completed primary computer applications and accelerated Quranic recitation curriculum early."
+                    },
+                    {
+                        period: "2024 - 2025",
+                        title: "Grade 9 Academic Success & Taekwondo Victories",
+                        desc: "Successfully passed Grade 9 board track exams at age 12 while winning medal positions in martial arts competitions."
+                    },
+                    {
+                        period: "2025 - Present",
+                        title: "Civic Relief & Youth Civic Engagement",
+                        desc: "Actively leading local civic aid distribution and community outreach programs."
+                    }
+                ],
+                gallery: [
+                    {
+                        img: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&q=80&w=800",
+                        caption: "Taekwondo Championship Honors & Athletic Training"
+                    },
+                    {
+                        img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800",
+                        caption: "Accelerated Academic & Computer Science Modules"
+                    },
+                    {
+                        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800",
+                        caption: "Community Relief Initiatives & Leadership"
+                    }
+                ]
+            },
+            barkah: {
+                name: "Barkah",
+                age: 7,
+                subtitle: "Systematic Early Acceleration & Early Child Development Roadmap",
+                milestones: [
+                    {
+                        period: "2024 - 2025",
+                        title: "Early Foundations & Primary Literacy",
+                        desc: "Initiated systematic early learning in reading, numerical reasoning, and basic computer exposure."
+                    },
+                    {
+                        period: "2025 - Present",
+                        title: "Physical Agility & Integrated Development",
+                        desc: "Enrolled in foundational physical agility exercises and Islamic moral character acceleration modules."
+                    }
+                ],
+                gallery: [
+                    {
+                        img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800",
+                        caption: "Early STEM & Creative Learning Activities"
+                    },
+                    {
+                        img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
+                        caption: "Physical Fitness & Agility Development"
+                    }
+                ]
+            }
+        };
+
+        function openStudentShowcaseTab(studentKey) {
+            const student = SHOWCASE_DATA[studentKey];
+            if (!student) return;
+
+            const newWindow = window.open('', '_blank');
+            if (!newWindow) {
+                alert('Please allow popups for this website to view the showcase in a new tab.');
+                return;
+            }
+
+            const htmlContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${student.name} — Student Portfolio Showcase</title>
+    <script src="https://cdn.tailwindcss.com"><\/script>
+    <script src="https://unpkg.com/lucide@latest"><\/script>
+</head>
+<body class="bg-[#111] text-slate-100 font-sans antialiased min-h-screen flex flex-col p-4 sm:p-8">
+    <div class="max-w-5xl mx-auto w-full flex-grow">
+        <!-- Top Navigation -->
+        <div class="flex items-center justify-between border-b border-neutral-800 pb-6 mb-8">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500 text-black font-black text-xl flex items-center justify-center shadow-lg shadow-amber-500/20">
+                    ${student.name.charAt(0)}
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black text-white uppercase leading-none">${student.name}</h1>
+                    <span class="text-xs text-amber-500 font-bold uppercase tracking-widest mt-1 block">Institute of Productive Minds</span>
+                </div>
+            </div>
+            <button onclick="window.close()" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-slate-300 font-bold px-4 py-2 rounded-xl text-xs transition">
+                ✕ Close Window
+            </button>
+        </div>
+
+        <!-- Banner Header -->
+        <div class="bg-gradient-to-r from-neutral-900 via-[#161616] to-neutral-900 border border-amber-500/30 rounded-3xl p-6 sm:p-10 mb-10 shadow-2xl relative overflow-hidden">
+            <div class="flex items-center gap-3 flex-wrap mb-2">
+                <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-bold px-3 py-1 rounded-full uppercase">Age ${student.age}</span>
+                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold px-3 py-1 rounded-full uppercase">Verified Achievement Record</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">${student.name} — Achievement Showcase</h2>
+            <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">${student.subtitle}</p>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="mb-12">
+            <h3 class="text-xl font-black text-white uppercase border-b border-neutral-800 pb-3 mb-6 flex items-center gap-2">
+                <i data-lucide="award" class="h-5 w-5 text-amber-500"></i> Year-Wise Roadmap & Milestones
+            </h3>
+            <div class="grid gap-4">
+                ${student.milestones.map(m => `
+                    <div class="bg-[#161616] p-6 rounded-2xl border border-neutral-800 flex flex-col sm:flex-row gap-4 hover:border-amber-500/40 transition">
+                        <div class="sm:w-32 text-amber-500 font-extrabold text-sm uppercase shrink-0">${m.period}</div>
+                        <div>
+                            <h4 class="text-white font-bold text-base mb-1">${m.title}</h4>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">${m.desc}</p>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="mb-12">
+            <h3 class="text-xl font-black text-white uppercase border-b border-neutral-800 pb-3 mb-6 flex items-center gap-2">
+                <i data-lucide="image" class="h-5 w-5 text-amber-500"></i> Photo Gallery & Visual Highlights
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                ${student.gallery.map(g => `
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-xl flex flex-col group">
+                        <div class="h-48 w-full overflow-hidden bg-black">
+                            <img src="${g.img}" alt="${g.caption}" onerror="this.src='https://placehold.co/800x500/111/f59e0b?text=Image+Unavailable';" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-4 bg-[#161616] flex-grow">
+                            <p class="text-xs text-slate-300 font-bold">${g.caption}</p>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Footer -->
+    <footer class="border-t border-neutral-900 pt-6 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Institute of Productive Minds — Official Student Portfolio Record.</p>
+    </footer>
+
+    <script>lucide.createIcons();<\/script>
+</body>
+</html>
+            `;
+
+            newWindow.document.write(htmlContent);
+            newWindow.document.close();
+        }
+    </script>
+
+    <!-- Portal Logic Scripts -->
+    <script>
+        const KG_WORKSHEET_FILES = [
+            { title: "Worksheet Set 1 (PDF)", desc: "Tracing, colors, and initial letter exercises", url: "https://drive.google.com/file/d/12o30ETer9cX_erW5KvpDVwxTcfbHV1Es/view?usp=sharing" },
+            { title: "Worksheet Set 2 (PDF)", desc: "Phonics, picture matching, and basic counting", url: "https://drive.google.com/file/d/18v7dj2eyas6msVRNRTT7dXnflz9pWKAl/view?usp=sharing" },
+            { title: "Worksheet Set 3 (PDF)", desc: "Handwriting practice & basic line patterns", url: "https://drive.google.com/file/d/19wgkbj_fgQp4GxQm0LyKs9HRvGKolzye/view?usp=sharing" },
+            { title: "Worksheet Set 4 (PDF)", desc: "Early math shapes, sizes & object grouping", url: "https://drive.google.com/file/d/1BrKHNLzbxfMnyRgB03HgH_B_Ne5zEUo7/view?usp=sharing" },
+            { title: "Worksheet Set 5 (PDF)", desc: "Urdu Haroof-e-Tahajji tracing and activities", url: "https://drive.google.com/file/d/1HZpmEafeVoCZVBvYtVYXz0oDp6p3hCHS/view?usp=sharing" },
+            { title: "Worksheet Set 6 (PDF)", desc: "Sight words and vocabulary building sheets", url: "https://drive.google.com/file/d/1TjeDi-B9577rv2VIL2Z-foKg29RbmZQ7/view?usp=sharing" },
+            { title: "Worksheet Set 7 (PDF)", desc: "Simple addition and number counting sheets", url: "https://drive.google.com/file/d/1U5cbVZB7mK8NvLM4tUgI2iS0dXSiXowk/view?usp=sharing" },
+            { title: "Worksheet Set 8 (PDF)", desc: "Interactive coloring and activity worksheets", url: "https://drive.google.com/file/d/1hbQKNjsXB9zJiXU-zDD4QEa5NW8xc4XV/view?usp=sharing" }
+        ];
+
+        const CLASS_DATABASE = {
+            "STD-KG": {
+                id: "STD-KG",
+                grade: "KG / Pre-1",
+                title: "Kindergarten / Pre-1 Curricular Subjects & Worksheets",
+                track: "Early Years Foundation Track",
+                subjects: [
+                    { name: "English", icon: "book-open", desc: "Alphabet, phonics, basic vocabulary, listening and tracing.", url: "https://sabaq.pk/book-page.php?b=f&c=kg&s=en", type: "link" },
+                    { name: "Mathematics", icon: "calculator", desc: "Counting numbers, basic shapes, simple patterns and addition.", url: "https://sabaq.pk/book-page.php?b=f&c=kg&s=m", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "Urdu letters (Haroof-e-Tahajji), basic words and sound recognition.", url: "https://sabaq.pk/book-page.php?b=f&c=kg&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            },
+            "STD-01": {
+                id: "STD-01",
+                grade: "Class 1",
+                title: "Grade 1 Curricular Subjects",
+                track: "Primary Academic Track",
+                subjects: [
+                    { name: "English", icon: "book-open", desc: "Basic reading, phonics, dialogue, simple sentences and grammar.", url: "https://sabaq.pk/book-page.php?b=cc&c=1&s=en", type: "link" },
+                    { name: "Mathematics", icon: "calculator", desc: "Numbers up to 100, addition, subtraction, basic shapes & measurements.", url: "https://sabaq.pk/book-page.php?b=cc&c=1&s=m", type: "link" },
+                    { name: "General Knowledge", icon: "globe", desc: "Our body, family, hygiene, animals, plants and good manners.", url: "https://sabaq.pk/book-page.php?b=f&c=1&s=gk", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "Urdu sentence building, simple stories, vocabulary and basic grammar.", url: "https://sabaq.pk/book-page.php?b=f&c=1&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            },
+            "STD-02": {
+                id: "STD-02",
+                grade: "Class 2",
+                title: "Grade 2 Curricular Subjects",
+                track: "Primary Academic Track",
+                subjects: [
+                    { name: "English", icon: "book-open", desc: "Reading comprehension, vocabulary, punctuation and simple writing.", url: "https://sabaq.pk/book-page.php?b=cc&c=2&s=en", type: "link" },
+                    { name: "Mathematics", icon: "calculator", desc: "Three-digit numbers, basic multiplication, division, money & time.", url: "https://sabaq.pk/book-page.php?b=cc&c=2&s=m", type: "link" },
+                    { name: "General Knowledge", icon: "globe", desc: "Plants, animals, weather, safety rules, community & social ethics.", url: "https://sabaq.pk/book-page.php?b=f&c=2&s=gk", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "Reading comprehension, short stories, dictation & grammar skills.", url: "https://sabaq.pk/book-page.php?b=f&c=2&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            },
+            "STD-03": {
+                id: "STD-03",
+                grade: "Class 3",
+                title: "Grade 3 Curricular Subjects",
+                track: "Primary Academic Track",
+                subjects: [
+                    { name: "English", icon: "book-open", desc: "Reading comprehension, phonics, dialogue & basic grammar.", url: "https://sabaq.pk/book-page.php?b=cc&c=3&s=en", type: "link" },
+                    { name: "Mathematics", icon: "calculator", desc: "Numbers, addition, multiplication, division & measurement.", url: "https://sabaq.pk/book-page.php?b=cc&c=3&s=m", type: "link" },
+                    { name: "General Knowledge", icon: "globe", desc: "Our environment, plants, animals, social manners & ethics.", url: "https://sabaq.pk/book-page.php?b=f&c=3&s=gk", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "Urdu reading, vocabulary building, basic grammar & stories.", url: "https://sabaq.pk/book-page.php?b=f&c=3&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            },
+            "STD-04": {
+                id: "STD-04",
+                grade: "Class 4",
+                title: "Grade 4 Curricular Subjects",
+                track: "Primary Academic Track",
+                subjects: [
+                    { name: "English", icon: "book-open", desc: "Narrative composition, sentence syntax, reading comprehension.", url: "https://sabaq.pk/book-page.php?b=cc&c=4&s=en", type: "link" },
+                    { name: "Mathematics", icon: "calculator", desc: "Fractions, decimals, place values, word problems & basic geometry.", url: "https://sabaq.pk/book-page.php?b=cc&c=4&s=m", type: "link" },
+                    { name: "General Science", icon: "atom", desc: "Human body systems, plants, matter, light, sound and energy.", url: "https://sabaq.pk/book-page.php?b=f&c=4&s=gs", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "Complex sentence structure, passage reading, and composition.", url: "https://sabaq.pk/book-page.php?b=f&c=4&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            },
+            "STD-05": {
+                id: "STD-05",
+                grade: "Class 5",
+                title: "Grade 5 Curricular Subjects",
+                track: "Upper Primary Track",
+                subjects: [
+                    { name: "English", icon: "book-open", desc: "Advanced grammar, essays, reading & communication exercises.", url: "https://sabaq.pk/book-page.php?b=cc&c=5&s=en", type: "link" },
+                    { name: "Mathematics", icon: "calculator", desc: "LCM/HCF, percentage, averages, perimeter & geometric shapes.", url: "https://sabaq.pk/book-page.php?b=cc&c=5&s=m", type: "link" },
+                    { name: "General Science", icon: "atom", desc: "Cell organization, forces, simple machines, space & solar system.", url: "https://sabaq.pk/book-page.php?b=f&c=5&s=gs", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "Urdu literature, essay writing, and grammar practice.", url: "https://sabaq.pk/book-page.php?b=f&c=5&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            },
+            "STD-06": {
+                id: "STD-06",
+                grade: "Class 6",
+                title: "Grade 6 Curricular Subjects",
+                track: "Middle Academic Track",
+                subjects: [
+                    { name: "Mathematics", icon: "calculator", desc: "Algebra intro, ratios, proportions, integers, and geometry.", url: "https://sabaq.pk/book-page.php?b=cc&c=6&s=m", type: "link" },
+                    { name: "General Science", icon: "atom", desc: "Photosynthesis, human digestion, elements, compounds, forces.", url: "https://sabaq.pk/book-page.php?b=f&c=6&s=gs", type: "link" },
+                    { name: "English", icon: "book-open", desc: "Advanced comprehension, tenses, writing skills & grammar.", url: "https://sabaq.pk/book-page.php?b=cc&c=6&s=en", type: "link" },
+                    { name: "Computer Science", icon: "laptop", desc: "Computer hardware, operating systems, and basic algorithms.", url: "https://sabaq.pk/book-page.php?b=cc&c=6&s=cs", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "Urdu poetry, classical prose, grammar & creative writing.", url: "https://sabaq.pk/book-page.php?b=f&c=6&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            },
+            "STD-07": {
+                id: "STD-07",
+                grade: "Class 7",
+                title: "Grade 7 Curricular Subjects",
+                track: "Middle Academic Track",
+                subjects: [
+                    { name: "Mathematics", icon: "calculator", desc: "Algebraic expressions, linear equations, geometry & data handling.", url: "https://sabaq.pk/book-page.php?b=cc&c=7&s=m", type: "link" },
+                    { name: "General Science", icon: "atom", desc: "Human organ systems, chemical reactions, heat, sound & light.", url: "https://sabaq.pk/book-page.php?b=f&c=7&s=gs", type: "link" },
+                    { name: "English", icon: "book-open", desc: "Comprehension, essay writing, active/passive voice, direct speech.", url: "https://sabaq.pk/book-page.php?b=cc&c=7&s=en", type: "link" },
+                    { name: "Computer Science", icon: "laptop", desc: "Flowcharts, programming fundamentals, and digital ethics.", url: "https://sabaq.pk/book-page.php?b=cc&c=7&s=cs", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "Urdu literature, essay writing, poetry comprehension & grammar.", url: "https://sabaq.pk/book-page.php?b=f&c=7&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            },
+            "STD-08": {
+                id: "STD-08",
+                grade: "Class 8",
+                title: "Grade 8 Curricular Subjects",
+                track: "Pre-Matric Academic Track",
+                subjects: [
+                    { name: "Mathematics", icon: "calculator", desc: "Exponents, polynomial equations, geometry proofs & statistics.", url: "https://sabaq.pk/book-page.php?b=cc&c=8&s=m", type: "link" },
+                    { name: "General Science", icon: "atom", desc: "Heredity, ecology, chemical bonds, pressure & electricity.", url: "https://sabaq.pk/book-page.php?b=f&c=8&s=gs", type: "link" },
+                    { name: "English", icon: "book-open", desc: "Grammar, summary writing, creative composition & comprehension.", url: "https://sabaq.pk/book-page.php?b=cc&c=8&s=en", type: "link" },
+                    { name: "Computer Science", icon: "laptop", desc: "Programming logic, problem solving, networks & databases.", url: "https://sabaq.pk/book-page.php?b=cc&c=8&s=cs", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "Comprehensive Urdu grammar, essay writing, and literary analysis.", url: "https://sabaq.pk/book-page.php?b=f&c=8&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            },
+            "STD-09": {
+                id: "STD-09",
+                grade: "Class 9",
+                title: "Grade 9 Matric Part 1 Board Track",
+                track: "Core Secondary Board Track",
+                subjects: [
+                    { name: "Mathematics", icon: "calculator", desc: "Matrices, logarithms, algebraic formulas, real & complex numbers.", url: "https://sabaq.pk/book-page.php?b=f&c=9&s=m", type: "link" },
+                    { name: "Physics", icon: "zap", desc: "Kinematics, dynamics, scalars, vectors, pressure & properties of matter.", url: "https://sabaq.pk/book-page.php?b=f&c=9&s=p", type: "link" },
+                    { name: "Chemistry", icon: "flask-conical", desc: "Atomic structure, periodic table, chemical bonding & stoichiometry.", url: "https://sabaq.pk/book-page.php?b=f&c=9&s=c", type: "link" },
+                    { name: "Biology", icon: "dna", desc: "Cell biology, biodiversity, enzymes, bioenergetics & nutrition.", url: "https://sabaq.pk/book-page.php?b=f&c=9&s=b", type: "link" },
+                    { name: "English", icon: "book-open", desc: "Board pattern grammar, idioms, essays, summaries & translation.", url: "https://sabaq.pk/book-page.php?b=f&c=9&s=en", type: "link" },
+                    { name: "Computer Science", icon: "laptop", desc: "C++ programming, problem solving, logic gates & algorithms.", url: "https://sabaq.pk/book-page.php?b=f&c=9&s=cs", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "Matric Urdu paper prep, essay composition, grammar & literature.", url: "https://sabaq.pk/book-page.php?b=f&c=9&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            },
+            "STD-10": {
+                id: "STD-10",
+                grade: "Class 10",
+                title: "Grade 10 Matric Part 2 Board Track",
+                track: "Core Secondary Board Track",
+                subjects: [
+                    { name: "Mathematics", icon: "calculator", desc: "Quadratic equations, sets, functions, trigonometry & geometry.", url: "https://sabaq.pk/book-page.php?b=f&c=10&s=m", type: "link" },
+                    { name: "Physics", icon: "zap", desc: "Waves, sound, geometrical optics, electrostatics & electromagnetism.", url: "https://sabaq.pk/book-page.php?b=f&c=10&s=p", type: "link" },
+                    { name: "Chemistry", icon: "flask-conical", desc: "Organic chemistry, chemical equilibrium, acids, bases & biochemistry.", url: "https://sabaq.pk/book-page.php?b=f&c=10&s=c", type: "link" },
+                    { name: "Biology", icon: "dna", desc: "Gaseous exchange, homeostasis, coordination, genetics & biotechnology.", url: "https://sabaq.pk/book-page.php?b=f&c=10&s=b", type: "link" },
+                    { name: "English", icon: "book-open", desc: "Board essays, direct/indirect, active/passive & comprehension.", url: "https://sabaq.pk/book-page.php?b=f&c=10&s=en", type: "link" },
+                    { name: "Computer Science", icon: "laptop", desc: "Data structures, functions, file management & logic circuits.", url: "https://sabaq.pk/book-page.php?b=f&c=10&s=cs", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "Board exam preparation, advanced essay writing & poetry explanation.", url: "https://sabaq.pk/book-page.php?b=f&c=10&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            },
+            "STD-11": {
+                id: "STD-11",
+                grade: "1st Year (11th)",
+                title: "1st Year Intermediate Board Track",
+                track: "Higher Secondary Track (FSc / ICS / I.Com)",
+                subjects: [
+                    { name: "Mathematics", icon: "calculator", desc: "Complex numbers, matrices, quadratic equations, sequence & trigonometry.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=m", type: "link" },
+                    { name: "Physics", icon: "zap", desc: "Measurements, vectors, work & energy, circular motion, waves & optics.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=p", type: "link" },
+                    { name: "Chemistry", icon: "flask-conical", desc: "Stoichiometry, atomic structure, gas laws, liquids & chemical equilibrium.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=c", type: "link" },
+                    { name: "Biology", icon: "dna", desc: "Cell structure, biological molecules, enzymes, kingdom animalia & botany.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=b", type: "link" },
+                    { name: "Computer Science", icon: "laptop", desc: "Information technology, data communications, networks & hardware.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=cs", type: "link" },
+                    { name: "English", icon: "book-open", desc: "Inter board plays, poems, short stories, essays and grammar.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=en", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "Inter board prose, ghazals, nazms, essay composition & grammar.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            },
+            "STD-12": {
+                id: "STD-12",
+                grade: "2nd Year (12th)",
+                title: "2nd Year Intermediate Board Track",
+                track: "Higher Secondary Track (FSc / ICS / I.Com)",
+                subjects: [
+                    { name: "Mathematics", icon: "calculator", desc: "Functions, limits, differentiation, integration & analytic geometry.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=m", type: "link" },
+                    { name: "Physics", icon: "zap", desc: "Electrostatics, current electricity, electromagnetism, modern physics & electronics.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=p", type: "link" },
+                    { name: "Chemistry", icon: "flask-conical", desc: "Periodic trends, s & p block elements, organic chemistry & biochemistry.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=c", type: "link" },
+                    { name: "Biology", icon: "dna", desc: "Homeostasis, support & movement, reproduction, genetics & evolution.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=b", type: "link" },
+                    { name: "Computer Science", icon: "laptop", desc: "Database concepts, MS Access, C programming language & data structures.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=cs", type: "link" },
+                    { name: "English", icon: "book-open", desc: "Modern essays, novel studies, essay composition & board prep.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=en", type: "link" },
+                    { name: "Urdu", icon: "languages", desc: "2nd Year literature, board essay writing & detailed poetry analysis.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=u", type: "link" },
+                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
+                ]
+            }
+        };
+
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedStudent = sessionStorage.getItem('activeStudentId');
+            if (savedStudent && CLASS_DATABASE[savedStudent]) {
+                renderStudentDashboard(CLASS_DATABASE[savedStudent]);
+            }
+        });
+
+        function openLoginModal() {
+            document.getElementById('login-modal').classList.remove('hidden');
+            document.getElementById('login-error').classList.add('hidden');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('login-modal').classList.add('hidden');
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const idInput = document.getElementById('login-id').value.trim().toUpperCase();
+            const studentData = CLASS_DATABASE[idInput];
+
+            if (studentData) {
+                sessionStorage.setItem('activeStudentId', idInput);
+                renderStudentDashboard(studentData);
+                closeLoginModal();
+                document.getElementById('portal-section').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
+            }
+        }
+
+        function openWorksheetsModal() {
+            const container = document.getElementById('worksheets-list');
+            container.innerHTML = '';
+
+            const savedStudent = sessionStorage.getItem('activeStudentId');
+            const activeStudentData = savedStudent ? CLASS_DATABASE[savedStudent] : null;
+            const studentGrade = activeStudentData ? activeStudentData.grade : "Class";
+            
+            document.getElementById('modal-grade-title').innerText = `${studentGrade} Worksheets Repository`;
+
+            const rawList = dynamicWorksheets.length > 0 ? dynamicWorksheets : KG_WORKSHEET_FILES;
+
+            const filteredList = rawList.filter(file => {
+                if (!file.Grade && !file.grade) {
+                    return studentGrade.toLowerCase().includes("kg");
+                }
+
+                const fileGrade = (file.Grade || file.grade || "").toString().trim().toLowerCase();
+                const currentGrade = studentGrade.toString().trim().toLowerCase();
+
+                return fileGrade === currentGrade || 
+                       fileGrade.replace('class', '').trim() === currentGrade.replace('class', '').trim();
+            });
+
+            if (filteredList.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8 text-slate-400">
+                        <p class="text-sm">No worksheets available for ${studentGrade} yet.</p>
+                    </div>
+                `;
+                document.getElementById('worksheets-modal').classList.remove('hidden');
+                return;
+            }
+
+            filteredList.forEach((file, idx) => {
+                const item = document.createElement('a');
+                
+                const fileTitle = file.Title || file.title || "Untitled Worksheet";
+                const fileDesc = file.Description || file.desc || "No description provided";
+                const fileUrl = file.FileLink || file.url || "#";
+
+                item.href = fileUrl;
+                item.target = "_blank";
+                item.rel = "noopener noreferrer";
+                item.className = "flex items-center justify-between p-4 rounded-2xl bg-[#111] border border-neutral-800 hover:border-amber-500/50 hover:bg-neutral-900 transition group";
+
+                item.innerHTML = `
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-xs group-hover:bg-amber-500 group-hover:text-black transition">
+                            0${idx + 1}
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-bold text-white group-hover:text-amber-400 transition">${fileTitle}</h5>
+                            <p class="text-xs text-slate-400">${fileDesc}</p>
+                        </div>
+                    </div>
+                    <span class="text-xs text-amber-500 font-bold flex items-center gap-1 group-hover:translate-x-1 transition">
+                        Open PDF <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
+                    </span>
+                `;
+                container.appendChild(item);
+            });
+
+            document.getElementById('worksheets-modal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeWorksheetsModal() {
+            document.getElementById('worksheets-modal').classList.add('hidden');
+        }
+
+        function renderStudentDashboard(student) {
+            document.getElementById('locked-view').classList.add('hidden');
+            const dashboard = document.getElementById('student-dashboard');
+            dashboard.classList.remove('hidden');
+
+            document.getElementById('student-avatar-grade').innerText = student.grade.includes('KG') ? 'KG' : student.grade.replace('Class ', '').replace(' (11th)', '').replace(' (12th)', '');
+            document.getElementById('student-display-name').innerText = `${student.grade} Student`;
+            document.getElementById('student-display-id').innerText = student.id;
+            document.getElementById('student-display-class').innerText = student.grade;
+            document.getElementById('dashboard-class-title').innerText = student.title;
+            document.getElementById('dashboard-track-badge').innerText = student.track;
+
+            const grid = document.getElementById('subjects-grid');
+            grid.innerHTML = '';
+
+            student.subjects.forEach(sub => {
+                const card = document.createElement('div');
+                card.className = "bg-[#161616] border border-neutral-800 hover:border-amber-500/40 rounded-3xl p-6 flex flex-col justify-between transition duration-300 shadow-xl group";
+                
+                let actionButtonHtml = '';
+                if (sub.type === "modal") {
+                    actionButtonHtml = `
+                        <button onclick="openWorksheetsModal()" class="w-full bg-amber-500 hover:bg-amber-400 text-black font-extrabold text-xs uppercase py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
+                            Open ${sub.name} <i data-lucide="folder-open" class="h-3.5 w-3.5"></i>
+                        </button>
+                    `;
+                } else {
+                    actionButtonHtml = `
+                        <a href="${sub.url}" target="_blank" rel="noopener noreferrer" class="w-full bg-neutral-900 hover:bg-amber-500 hover:text-black border border-neutral-800 hover:border-amber-500 text-amber-500 font-extrabold text-xs uppercase py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
+                            Open ${sub.name} <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
+                        </a>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-black transition duration-300">
+                                <i data-lucide="${sub.icon}" class="h-6 w-6"></i>
+                            </div>
+                            <span class="text-[10px] uppercase font-extrabold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">${student.grade}</span>
+                        </div>
+                        <h4 class="text-xl font-black text-white uppercase mb-2 group-hover:text-amber-400 transition">${sub.name}</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">${sub.desc}</p>
+                    </div>
+
+                    ${actionButtonHtml}
+                `;
+
+                grid.appendChild(card);
+            });
+
+            const navAuth = document.getElementById('nav-auth-container');
+            navAuth.innerHTML = `
+                <button onclick="logoutStudent()" class="border border-neutral-800 bg-neutral-900 hover:bg-neutral-800 text-amber-500 font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-2">
+                    <i data-lucide="user" class="h-4 w-4"></i> ${student.grade} Portal (Exit)
+                </button>
+            `;
+
+            lucide.createIcons();
+        }
+
+        function logoutStudent() {
+            sessionStorage.removeItem('activeStudentId');
+            document.getElementById('student-dashboard').classList.add('hidden');
+            document.getElementById('locked-view').classList.remove('hidden');
+
+            const navAuth = document.getElementById('nav-auth-container');
+            navAuth.innerHTML = `
+                <button onclick="openLoginModal()" class="bg-amber-500 text-black px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-amber-400 transition shadow-lg shadow-amber-500/10 flex items-center gap-2">
+                    <i data-lucide="log-in" class="h-4 w-4"></i> Student Login
+                </button>
+            `;
+
+            lucide.createIcons();
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function switchTab(month) {
+            const placeholder = document.getElementById('content-placeholder');
+            if (placeholder) placeholder.classList.add('hidden');
+
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-black');
+                btn.classList.add('text-slate-400', 'hover:text-white');
+            });
+
+            const selectedContent = document.getElementById('content-' + month);
+            if (selectedContent) selectedContent.classList.remove('hidden');
+
+            const selectedBtn = document.getElementById('btn-' + month);
+            if (selectedBtn) {
+                selectedBtn.classList.remove('text-slate-400', 'hover:text-white');
+                selectedBtn.classList.add('bg-amber-500', 'text-black');
+            }
+        }
+    </script>
+    
+    <script>
+        const DASHBOARD_API_URL = "https://script.google.com/macros/s/AKfycbxoZ23L9HWQnrkia1vSTNGPTvAYfbHcVDRGEprQpUdp_84TANXuk-6qID2Ww91ViwA1UA/exec";
+
+        let dynamicWorksheets = [];
+
+        async function fetchDashboardData() {
+            try {
+                const response = await fetch(DASHBOARD_API_URL);
+                const data = await response.json();
+                dynamicWorksheets = data.worksheets || [];
+            } catch (error) {
+                console.error("Error fetching data from Google Sheets:", error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchDashboardData();
+        });
+    </script>
+</body>
+</html>
