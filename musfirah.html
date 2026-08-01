@@ -1,282 +1,798 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musfirah Akram | Transformational Life & Mindset Coach</title>
+    <title>Coach Musfirah Akram | Belief Transformation & Perspective Shift Specialist</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Three.js CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
     <style>
-        /* Force absolute 100% width edge-to-edge rendering */
-        html, body {
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #4834D4;
+            --secondary: #A29BFE;
+            --accent: #FD79A8;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            width: 100%;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        #webgl-bg {
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 8%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            position: relative;
+            background: radial-gradient(circle at 80% 20%, #f1f0ff 0%, #f8fafc 60%);
+            gap: 3rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(108, 92, 231, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--dark), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #64748B;
+            margin-bottom: 1.5rem;
+        }
+
+        .credentials-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .pill {
+            background: white;
+            border: 1px solid #E2E8F0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Interactive Hero Image Container */
+        .hero-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .interactive-hero-img-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 440px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.2);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            animation: floatImage 6s ease-in-out infinite;
+        }
+
+        .interactive-hero-img-wrapper:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(108, 92, 231, 0.3);
+        }
+
+        .interactive-hero-img-wrapper img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .interactive-hero-img-wrapper:hover img {
+            transform: scale(1.08);
+        }
+
+        .hero-img-badge {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            padding: 1rem 1.2rem;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .hero-img-badge i {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .hero-img-badge-text {
+            font-size: 0.85rem;
+            color: var(--dark);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        @keyframes floatImage {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* Programs Section */
+        .section {
+            padding: 6rem 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+        }
+
+        .section-title p {
+            color: #64748B;
+            margin-top: 0.5rem;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(108, 92, 231, 0.15);
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        /* Interactive Program Card Image */
+        .card-img-container {
+            width: 100%;
+            height: 190px;
+            border-radius: 14px;
+            margin-bottom: 1.2rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .program-card:hover .card-img-container img {
+            transform: scale(1.08);
+        }
+
+        .card-img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.5), transparent);
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .program-card:hover .card-img-overlay {
+            opacity: 0.7;
+        }
+
+        .card-tag-badge {
+            position: absolute;
+            top: 0.8rem;
+            right: 0.8rem;
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--primary-dark);
+            padding: 0.3rem 0.77rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            backdrop-filter: blur(4px);
+        }
+
+        .program-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .price-tag {
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .program-card p {
+            color: #64748B;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .click-hint {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-            pointer-events: none;
-            background: radial-gradient(circle at center, #111827 0%, #030712 100%);
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 1.5rem;
         }
 
-        /* Glassmorphism styling */
-        .glass-card {
-            background: rgba(15, 23, 42, 0.55);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        .modal-content {
+            background: white;
+            border-radius: 24px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: #F1F5F9;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: #64748B;
+            transition: background 0.2s;
+            z-index: 10;
+        }
+
+        .close-modal:hover {
+            background: #E2E8F0;
+            color: var(--dark);
+        }
+
+        .modal-header-img {
+            width: 100%;
+            height: 220px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .modal-body h4 {
+            margin-top: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .modal-body ul {
+            margin-left: 1.2rem;
+            color: #475569;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-body ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .meta-box {
+            background: #F8FAFC;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        /* Connect Banner */
+        .connect-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            border-radius: 30px;
+            padding: 4rem;
+            text-align: center;
+            margin: 0 8% 6rem 8%;
+        }
+
+        .connect-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            color: #64748B;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 968px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 8rem;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .interactive-hero-img-wrapper {
+                max-width: 100%;
+            }
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500/40 selection:text-white">
-
-    <!-- 100% FULL-WIDTH 3D CANVAS -->
-    <canvas id="webgl-bg"></canvas>
+<body>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-4 max-w-7xl mx-auto backdrop-blur-sm bg-slate-950/20 border-b border-white/5">
-        <a href="#" class="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-indigo-400 to-pink-400">
-            MUSFIRAH AKRAM
-        </a>
-        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-            <a href="#about" class="hover:text-teal-400 transition-colors">About</a>
-            <a href="#programs" class="hover:text-indigo-400 transition-colors">Programs</a>
-        </div>
-        <a href="#contact" class="px-5 py-2 text-sm font-semibold text-slate-900 bg-gradient-to-r from-teal-400 to-indigo-400 rounded-full hover:shadow-[0_0_20px_rgba(45,212,191,0.4)] transition-all transform hover:-translate-y-0.5">
-            Book Session
-        </a>
+    <nav>
+        <a href="#" class="logo">Coach Musfirah Akram</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Courses & Programs</a></li>
+            <li><a href="#connect">Connect</a></li>
+        </ul>
+        <a href="https://wa.me/923350253872" target="_blank" class="btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen w-full flex items-center justify-center px-6 pt-20 relative">
-        <div class="max-w-4xl text-center space-y-6 hero-content relative z-10">
-            <span class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest text-teal-300 bg-teal-950/70 border border-teal-800/50 inline-block">
-                NEURO-RESPONSIVE COACHING
-            </span>
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
-                Rewire Your Mind for <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-indigo-400 to-pink-400">
-                    Unshakable Success
-                </span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-                Meet <strong class="text-white font-semibold">Coach Musfirah Akram</strong>. Utilizing modern neuroscience and mindset strategy to help high-achievers master their internal world and dominate their outer one.
-            </p>
-            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 hover:bg-indigo-500 rounded-full font-semibold transition-all shadow-lg shadow-indigo-600/30 hover:scale-105">
-                    Start Transformation
-                </a>
-                <a href="#programs" class="w-full sm:w-auto px-8 py-3.5 glass-card hover:bg-white/10 rounded-full font-semibold transition-all hover:scale-105">
-                    Explore Methods
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <span class="badge"><i class="fa-solid fa-brain"></i> Leaders' Loom</span>
+            <h1>Musfirah Akram</h1>
+            <h2>Belief Transformation & Perspective Shift Specialist</h2>
+            <p>Helping individuals and families break limiting beliefs, heal emotional pain, shift perspectives, and build lives rooted in purpose, clarity, alignment, and faith.</p>
+            
+            <div class="credentials-pills">
+                <span class="pill"><i class="fa-solid fa-certificate"></i> American Board Certified NLP Practitioner</span>
+                <span class="pill"><i class="fa-solid fa-microscope"></i> Biomedical Engineer</span>
+                <span class="pill"><i class="fa-solid fa-award"></i> Tabdeelian Certified Trainer</span>
+                <span class="pill"><i class="fa-solid fa-house-user"></i> Homeschooling Mama</span>
+                <span class="pill"><i class="fa-solid fa-comments"></i> Speaker & Writer</span>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#programs" class="btn">Explore Programs</a>
+                <a href="https://www.instagram.com/musfirahakram/" target="_blank" class="btn" style="background: transparent; color: var(--dark); border: 2px solid #CBD5E1; box-shadow: none;">
+                    <i class="fa-brands fa-instagram"></i> Instagram
                 </a>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-32 px-6 max-w-6xl mx-auto relative z-10">
-        <div class="glass-card rounded-3xl p-8 md:p-12 border border-white/10 grid md:grid-cols-2 gap-12 items-center reveal">
-            <div class="space-y-6">
-                <span class="text-teal-400 font-semibold text-sm uppercase tracking-wider">The Mindset Architect</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Your Brain is the Operating System. Let's Upgrade It.</h2>
-                <p class="text-slate-200 leading-relaxed">
-                    Coach Musfirah Akram blends behavioral science with actionable leadership frameworks to eliminate mental fatigue, resolve subconscious blocks, and optimize cognitive performance.
-                </p>
-                <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
-                    <div>
-                        <div class="text-4xl font-bold text-teal-400">10+</div>
-                        <div class="text-xs text-slate-400 uppercase tracking-widest">Years Experience</div>
-                    </div>
-                    <div>
-                        <div class="text-4xl font-bold text-pink-400">500+</div>
-                        <div class="text-xs text-slate-400 uppercase tracking-widest">Mindsets Rewired</div>
+        
+        <!-- Camera-Style Real Hero Image -->
+        <div class="hero-image-container">
+            <div class="interactive-hero-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" alt="Coach Musfirah Akram Real Portrait">
+                <div class="hero-img-badge">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <div class="hero-img-badge-text">
+                        Mindset & Belief Transformation
+                        <br><span style="color: #64748B; font-weight: 400;">Empowering lives with purpose & clarity</span>
                     </div>
                 </div>
             </div>
-            <div class="relative flex justify-center">
-                <div class="w-72 h-72 rounded-full bg-gradient-to-tr from-teal-500/20 via-indigo-500/10 to-pink-500/20 border border-white/20 p-2 flex items-center justify-center text-center backdrop-blur-xl shadow-inner">
-                    <p class="text-slate-100 italic text-sm p-6 leading-relaxed">"True leadership is the ability to master your own mind before you attempt to lead others."</p>
+        </div>
+    </section>
+
+    <!-- Programs & Courses Offered -->
+    <section class="section" id="programs">
+        <div class="section-title">
+            <h2>Featured Programs & Courses</h2>
+            <p>Click on any program to view complete details, schedule, pricing, and curriculum.</p>
+        </div>
+
+        <div class="programs-grid">
+            <!-- Wisdom Weavers -->
+            <div class="program-card" onclick="openModal('wisdom-weavers')">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" alt="Wisdom Weavers Classroom">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">Ages 6–12</span>
+                </div>
+                <h3>Wisdom Weavers</h3>
+                <div class="price-tag">RS 7,500 / month <span style="text-decoration: line-through; color: #94A3B8; font-size: 0.85rem;">RS 10,000</span> (35% OFF)</div>
+                <p>Integrated learning through Quran for kids aged 6–12 years. Linking Science, Math, Languages, and Character building.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <!-- Kirdar -->
+            <div class="program-card" onclick="openModal('kirdar')">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" alt="KIRDAR Character Building">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">Transformation</span>
+                </div>
+                <h3>KIRDAR</h3>
+                <div class="price-tag">RS 8,000 <span style="text-decoration: line-through; color: #94A3B8; font-size: 0.85rem;">RS 12,000</span></div>
+                <p>Transform your beliefs, transform your life. A dedicated program for belief transformation and perspective shifts.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <!-- 1-on-1 Sessions -->
+            <div class="program-card" onclick="openModal('one-on-one')">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800" alt="1-on-1 Coaching Session">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">1-on-1 Coaching</span>
+                </div>
+                <h3>1-on-1 Coaching Sessions</h3>
+                <div class="price-tag">Online & In-Person Sessions Available</div>
+                <p>Personalized mentorship focused on belief transformation, mental emotional well-being, purpose discovery, and homeschooling support.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <!-- Ramadan Series -->
+            <div class="program-card" onclick="openModal('ramadan-series')">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&q=80&w=800" alt="Ramadan Learning Series">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">Interactive Series</span>
+                </div>
+                <h3>Ramadhan: Hidayah & Furqaan</h3>
+                <div class="price-tag">Interactive Kids & Youth Series</div>
+                <p>Interactive games, storytelling, Quran as a life filter, science links, and practical deed challenges.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Detail Popup -->
+    <div class="modal-overlay" id="programModal" onclick="closeModalOnOuter(event)">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header-img">
+                <img id="modalImg" src="" alt="Program Detail Camera Shot">
+            </div>
+            <div class="modal-header">
+                <div>
+                    <h3 id="modalTitle" style="font-size: 1.6rem; color: var(--dark);"></h3>
+                    <span id="modalTag" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;"></span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="meta-box" id="modalMeta"></div>
+
+                <p id="modalDescription" style="color: #475569; font-size: 0.95rem;"></p>
+                
+                <h4>Key Highlights & Curriculum:</h4>
+                <ul id="modalHighlights"></ul>
+
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://wa.me/923350253872" target="_blank" class="btn" style="flex: 1; text-align: center; text-decoration: none;">
+                        <i class="fa-brands fa-whatsapp"></i> Enroll via WhatsApp (+92 335 0253872)
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Programs Section -->
-    <section id="programs" class="py-24 px-6 max-w-7xl mx-auto relative z-10">
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass-card rounded-2xl p-8 reveal hover:border-teal-500/50 transition-colors">
-                <h3 class="text-xl font-bold mb-3 text-teal-300">Executive Brain Trust</h3>
-                <p class="text-slate-300 text-sm mb-6">1-on-1 cognitive coaching for high-stakes decision makers.</p>
-                <a href="#contact" class="text-teal-400 font-semibold text-sm hover:underline">Learn Strategy &rarr;</a>
-            </div>
-            <div class="glass-card rounded-2xl p-8 reveal hover:border-pink-500/50 transition-colors">
-                <h3 class="text-xl font-bold mb-3 text-pink-300">The Neural Alignment Group</h3>
-                <p class="text-slate-300 text-sm mb-6">A facilitated mastermind for peer-to-peer cognitive growth.</p>
-                <a href="#contact" class="text-pink-400 font-semibold text-sm hover:underline">Join Cohort &rarr;</a>
-            </div>
+    <!-- Connect Banner -->
+    <div class="connect-section" id="connect">
+        <h2>Connect with Coach Musfirah Akram</h2>
+        <p>Leaders' Loom | Belief Transformation & Perspective Shift Specialist</p>
+        
+        <div class="contact-info">
+            <a href="https://wa.me/923350253872" target="_blank" class="contact-btn">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+                +92 335 0253872
+            </a>
+            <a href="https://www.instagram.com/musfirahakram/" target="_blank" class="contact-btn">
+                <i class="fa-brands fa-instagram" style="font-size: 1.3rem;"></i>
+                @musfirahakram
+            </a>
         </div>
-    </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6 max-w-4xl mx-auto relative z-10">
-        <div class="glass-card rounded-3xl p-8 md:p-12 text-center space-y-6 reveal">
-            <h2 class="text-3xl md:text-4xl font-bold text-white">Initiate the Upgrade</h2>
-            <form class="max-w-md mx-auto space-y-4 text-left pt-4" onsubmit="event.preventDefault(); alert('Request Received.');">
-                <input type="text" placeholder="Name" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-teal-500 text-sm">
-                <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-teal-500 text-sm">
-                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-teal-500 to-indigo-500 font-semibold rounded-xl text-slate-950">
-                    Schedule Discovery Call
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="py-8 border-t border-white/5 text-center text-xs text-slate-600 relative z-10">
-        <p>&copy; 2026 Coach Musfirah Akram. Cognitive Strategy Division.</p>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Coach Musfirah Akram. All rights reserved.</p>
     </footer>
 
-    <!-- 100% RESPONSIVE 3D BRAIN SCRIPT -->
     <script>
-        const canvas = document.getElementById('webgl-bg');
-        const scene = new THREE.Scene();
-
-        // Setup Perspective Camera with auto-responsive FOV
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        
-        const renderer = new THREE.WebGLRenderer({ 
-            canvas: canvas, 
-            alpha: true, 
-            antialias: true 
-        });
-
-        // Resize function forcing 100% viewport width and height
-        function updateRendererSize() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-
-            camera.aspect = width / height;
-
-            // Dynamically adjust camera Z position so brain fills widescreen 100% correctly
-            if (width < 640) {
-                camera.position.z = 12; // Mobile view push back slightly
-            } else if (width < 1024) {
-                camera.position.z = 10;
-            } else {
-                camera.position.z = 9;  // Desktop view
+        // Program Data Details with Real Camera Image Links
+        const programData = {
+            'wisdom-weavers': {
+                title: 'Wisdom Weavers (Integrated Learning Through Quran)',
+                tag: 'Age Group: 6–12 Years',
+                img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800',
+                meta: '<strong>Start Date:</strong> August 4th | <strong>Schedule:</strong> Tuesdays & Thursdays (8 Sessions) | <strong>Timing:</strong> 4:30 – 5:15 PM PST | <strong>Fee:</strong> RS 7,500/month (Actual RS 10,000 - 35% Discount) | <strong>Platform:</strong> Online via Zoom (Kahoot Interactive)',
+                description: 'An integrated learning experience linking core subjects to Quranic principles, helping children develop strong character, wise decision-making, and daily fruitful habits.',
+                highlights: [
+                    'Science from Quran: Relating scientific concepts with Quranic verses.',
+                    'Mathematics: Explaining Quranic themes through mathematical logic.',
+                    'Language Skills: Basic English and Arabic grammar concepts.',
+                    'Craft Art: Hands-on activities related to Surahs.',
+                    'Memorization of Quranic Duaas: Weekly memorization of daily duas.',
+                    'Character Pillars: Wise choices, strong character, decision-making power, and fruitful habits.'
+                ]
+            },
+            'kirdar': {
+                title: 'KIRDAR',
+                tag: 'Belief Transformation Program',
+                img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800',
+                meta: '<strong>Start Date:</strong> Starting from 7th of July | <strong>Schedule:</strong> Tuesdays and Thursdays | <strong>Discounted Price:</strong> RS 8,000 (Actual: RS 12,000) | <strong>Contact:</strong> +92 335 0253872',
+                description: 'A transformative course designed by Musfirah Akram to help individuals challenge limiting beliefs, shift perspective, and build unshakeable character (Kirdar).',
+                highlights: [
+                    'Gold Values vs. Shackles of Worldly Values (Ego, Regret, Anxiety, Sadness vs. Truth, Honesty, Compassion, Justice, Gratitude).',
+                    'Identifying root belief structures and reframing negative perspective patterns.',
+                    'Developing resilience, emotional stability, and self-worth.',
+                    'Practical exercises to align daily behavior with core faith-based values.'
+                ]
+            },
+            'one-on-one': {
+                title: '1-on-1 Coaching & Mentorship',
+                tag: 'Personalized Coaching',
+                img: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800',
+                meta: '<strong>Format:</strong> Online & In-Person Sessions Available | <strong>Specialist:</strong> Belief Transformation & Perspective Shift Specialist',
+                description: 'Tailored individual coaching sessions providing direct guidance and safe space to heal, re-align, and navigate life challenges.',
+                highlights: [
+                    'Belief Transformation & Mindset Reset.',
+                    'Parenting Support & Guidance for mothers.',
+                    'Purpose Discovery & Life Clarity.',
+                    'Mental Emotional & Emotional Well-Being.',
+                    'Homeschooling Support & Resources.',
+                    '1:1 Intensive Coaching tailored to individual goals.'
+                ]
+            },
+            'ramadan-series': {
+                title: 'Ramadhan: A Month of Hidayah & Furqaan',
+                tag: 'Spiritual & Educational Series',
+                img: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&q=80&w=800',
+                meta: '<strong>Format:</strong> Interactive Workshops, Games & Storytelling',
+                description: 'A dedicated series designed to help children and families understand the essence of Ramadan through interactive learning, science filters, and practical deeds.',
+                highlights: [
+                    'What is Ramadhan?: Meaning, fasting purpose, patience, gratitude, and Taqwa.',
+                    'Blessings of Ramadhan: Laylat-ul-Qadr, rewards, and kindness challenges.',
+                    'Hidayah (Science Link): Listening to the right voice and tuning out negative influences.',
+                    'Furqaan (Life Filter Activity): Quran as a life filter to separate truth from falsehood.',
+                    'Battle of Badr & Historical Milestones: Lessons from Yaum-ul-Furqaan.'
+                ]
             }
+        };
 
-            camera.updateProjectionMatrix();
-            renderer.setSize(width, height, false);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        }
+        // Modal Functionality
+        function openModal(programKey) {
+            const data = programData[programKey];
+            if (!data) return;
 
-        updateRendererSize();
-        window.addEventListener('resize', updateRendererSize);
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalTag').innerText = data.tag;
+            document.getElementById('modalImg').src = data.img;
+            document.getElementById('modalMeta').innerHTML = data.meta;
+            document.getElementById('modalDescription').innerText = data.description;
 
-        // --- Create 3D Brain Point Cloud ---
-        const particleCount = 5500;
-        const geometry = new THREE.BufferGeometry();
-        const positions = new Float32Array(particleCount * 3);
-        const colors = new Float32Array(particleCount * 3);
-
-        const color1 = new THREE.Color(0x2dd4bf); // Teal
-        const color2 = new THREE.Color(0x818cf8); // Indigo
-
-        for (let i = 0; i < particleCount; i++) {
-            const hemi = Math.random() > 0.5 ? 1 : -1;
-            const t = Math.random() * Math.PI * 2;
-            const u = Math.random() * Math.PI - Math.PI / 2;
-
-            const baseRadius = 4.8;
-            const r = baseRadius + Math.sin(t * 4) * Math.cos(u * 5) * 0.8 + (Math.random() - 0.5) * 0.5;
-
-            positions[i * 3] = r * Math.cos(u) * Math.cos(t) + (hemi * 0.85); // X
-            positions[i * 3 + 1] = r * Math.sin(u) + Math.sin(t * 2) * 0.35; // Y
-            positions[i * 3 + 2] = r * Math.cos(u) * Math.sin(t);           // Z
-
-            const mixedColor = color1.clone().lerp(color2, Math.random());
-            colors[i * 3] = mixedColor.r;
-            colors[i * 3 + 1] = mixedColor.g;
-            colors[i * 3 + 2] = mixedColor.b;
-        }
-
-        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-        const material = new THREE.PointsMaterial({
-            size: 0.038,
-            vertexColors: true,
-            transparent: true,
-            opacity: 0.85,
-            blending: THREE.AdditiveBlending,
-            sizeAttenuation: true
-        });
-
-        const brain = new THREE.Points(geometry, material);
-        scene.add(brain);
-
-        // --- Interaction ---
-        let mouseX = 0;
-        let mouseY = 0;
-
-        window.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX - (window.innerWidth / 2)) * 0.0005;
-            mouseY = (e.clientY - (window.innerHeight / 2)) * 0.0005;
-        });
-
-        // --- Render Loop ---
-        const clock = new THREE.Clock();
-
-        function animate() {
-            const time = clock.getElapsedTime();
-
-            brain.rotation.y = time * 0.05;
-            brain.rotation.x += (mouseY - brain.rotation.x) * 0.05;
-            brain.rotation.z += (mouseX - brain.rotation.z) * 0.05;
-
-            // Dynamic pulse glow
-            material.opacity = 0.65 + Math.sin(time * 1.5) * 0.2;
-
-            renderer.render(scene, camera);
-            requestAnimationFrame(animate);
-        }
-        animate();
-
-        // --- GSAP Scrolltrigger ---
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.from('.hero-content', { opacity: 0, y: 30, duration: 1.2, ease: 'power3.out', delay: 0.2 });
-
-        gsap.utils.toArray('.reveal').forEach((element) => {
-            gsap.from(element, {
-                scrollTrigger: { trigger: element, start: 'top 85%' },
-                opacity: 0, y: 40, duration: 1, ease: 'power2.out'
+            const highlightsList = document.getElementById('modalHighlights');
+            highlightsList.innerHTML = '';
+            data.highlights.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                highlightsList.appendChild(li);
             });
-        });
 
-        gsap.to(brain.position, {
-            scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 1 },
-            z: -3, y: 1.5
-        });
+            document.getElementById('programModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('programModal').style.display = 'none';
+        }
+
+        function closeModalOnOuter(event) {
+            if (event.target.id === 'programModal') {
+                closeModal();
+            }
+        }
     </script>
 </body>
 </html>
