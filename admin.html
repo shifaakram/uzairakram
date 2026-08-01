@@ -3,143 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Upload Content</title>
+    <title>MUA Portal - Admin Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fadeIn { animation: fadeIn 0.25s ease-out forwards; }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen p-6">
+<body class="bg-[#111] text-slate-100 font-sans antialiased min-h-screen">
 
-    <div class="max-w-4xl mx-auto space-y-8">
-        
-        <!-- Header -->
-        <header class="flex justify-between items-center pb-6 border-b border-slate-800">
-            <div>
-                <h1 class="text-2xl font-bold text-amber-500">Admin Content Dashboard</h1>
-                <p class="text-xs text-slate-400 mt-1">Upload worksheets & videos to sync with your main website</p>
-            </div>
-            <a href="index.html" class="text-xs bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg font-semibold flex items-center gap-2 border border-slate-700">
-                <i data-lucide="external-link" class="w-4 h-4"></i> View Website
-            </a>
-        </header>
-
-        <!-- Status Alert -->
-        <div id="status-msg" class="hidden p-4 rounded-xl text-sm font-medium"></div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-            
-            <!-- Worksheet Form -->
-            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold">
-                        <i data-lucide="file-text" class="w-5 h-5"></i>
+    <!-- Admin Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#161616]/95 backdrop-blur-md border-b border-amber-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="bg-amber-500 p-2 rounded-xl text-black">
+                        <i data-lucide="shield-alert" class="h-6 w-6"></i>
                     </div>
-                    <h2 class="text-lg font-bold text-white">Upload Worksheet</h2>
+                    <div>
+                        <span class="font-black text-lg tracking-wider text-white block uppercase leading-none">MUA Admin Console</span>
+                        <span class="text-xs text-amber-500 font-bold tracking-widest block uppercase mt-1">Resource Uploader</span>
+                    </div>
                 </div>
-
-                <form id="worksheet-form" onsubmit="handleUpload(event, 'Worksheets')" class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Title</label>
-                        <input type="text" name="Title" required placeholder="e.g., Chapter 2 - My Friends" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-amber-500 text-slate-200">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Description</label>
-                        <input type="text" name="Description" required placeholder="e.g., General Knowledge Practice" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-amber-500 text-slate-200">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Class / Grade</label>
-                        <input type="text" name="Grade" required placeholder="e.g., KG, Class 8" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-amber-500 text-slate-200">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Google Drive PDF Link (URL)</label>
-                        <input type="url" name="FileLink" required placeholder="https://drive.google.com/file/d/..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-amber-500 text-slate-200">
-                    </div>
-                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
-                        <i data-lucide="plus-circle" class="w-4 h-4"></i> Add Worksheet
-                    </button>
-                </form>
             </div>
-
-            <!-- Video Form -->
-            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold">
-                        <i data-lucide="video" class="w-5 h-5"></i>
-                    </div>
-                    <h2 class="text-lg font-bold text-white">Upload Video Lesson</h2>
-                </div>
-
-                <form id="video-form" onsubmit="handleUpload(event, 'Videos')" class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Video Title</label>
-                        <input type="text" name="Title" required placeholder="e.g., Intro to Equations" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-amber-500 text-slate-200">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Description</label>
-                        <input type="text" name="Description" required placeholder="e.g., Lesson 1 explanations" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-amber-500 text-slate-200">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Subject</label>
-                        <input type="text" name="Subject" required placeholder="e.g., Mathematics, Science" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-amber-500 text-slate-200">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Video Link (YouTube / Drive Link)</label>
-                        <input type="url" name="VideoURL" required placeholder="https://youtube.com/watch?v=..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-amber-500 text-slate-200">
-                    </div>
-                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
-                        <i data-lucide="plus-circle" class="w-4 h-4"></i> Add Video
-                    </button>
-                </form>
-            </div>
-
         </div>
-    </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <div class="bg-[#161616] border border-neutral-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+            <h1 class="text-2xl font-black text-white uppercase mb-2">Upload Educational Content</h1>
+            <p class="text-xs text-slate-400 mb-8">Add new PDF worksheets or Video Lectures directly to the live student portal repository.</p>
+
+            <!-- Form Type Selector -->
+            <div class="flex gap-4 mb-8 border-b border-neutral-800 pb-4">
+                <button type="button" id="tab-worksheet" onclick="switchTab('worksheet')" class="px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-amber-500 text-black shadow-lg shadow-amber-500/10 transition">
+                    Worksheets
+                </button>
+                <button type="button" id="tab-lecture" onclick="switchTab('lecture')" class="px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-neutral-900 text-slate-400 border border-neutral-800 hover:text-white transition">
+                    Video Lectures
+                </button>
+            </div>
+
+            <!-- Upload Form -->
+            <form id="admin-upload-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                <input type="hidden" id="form-sheet-type" value="Worksheets">
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Grade / Class Level</label>
+                    <select id="grade-select" required class="w-full bg-[#111] border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                        <option value="KG">KG</option>
+                        <option value="Class 1">Class 1</option>
+                        <option value="Class 2">Class 2</option>
+                        <option value="Class 3">Class 3</option>
+                        <option value="Class 4">Class 4</option>
+                        <option value="Class 5">Class 5</option>
+                        <option value="Class 6">Class 6</option>
+                        <option value="Class 7">Class 7</option>
+                        <option value="Class 8">Class 8</option>
+                        <option value="Class 9">Class 9</option>
+                        <option value="Class 10">Class 10</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Title</label>
+                    <input type="text" id="title-input" required placeholder="e.g. Chapter 1 Practice Sheet or Algebra Basics" class="w-full bg-[#111] border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                </div>
+
+                <div id="desc-container">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Description</label>
+                    <textarea id="desc-input" rows="3" placeholder="Brief summary of the worksheet..." class="w-full bg-[#111] border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition"></textarea>
+                </div>
+
+                <div id="subject-container" class="hidden">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Subject</label>
+                    <input type="text" id="subject-input" placeholder="e.g. Mathematics, Science, English" class="w-full bg-[#111] border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                </div>
+
+                <div>
+                    <label id="url-label" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">PDF Document Link (Google Drive / Direct URL)</label>
+                    <input type="url" id="url-input" required placeholder="https://drive.google.com/..." class="w-full bg-[#111] border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition font-mono text-xs">
+                </div>
+
+                <div id="status-message" class="hidden text-xs font-bold p-4 rounded-xl text-center"></div>
+
+                <button type="submit" id="submit-btn" class="w-full bg-amber-500 hover:bg-amber-400 text-black font-extrabold py-4 rounded-xl transition uppercase tracking-wider text-xs shadow-lg shadow-amber-500/10 flex items-center justify-center gap-2">
+                    <i data-lucide="upload-cloud" class="h-4 w-4"></i> Upload Resource to Database
+                </button>
+            </form>
+        </div>
+    </main>
 
     <script>
-        // REPLACE THIS WITH YOUR DEPLOYED GOOGLE WEB APP URL
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxoZ23L9HWQnrkia1vSTNGPTvAYfbHcVDRGEprQpUdp_84TANXuk-6qID2Ww91ViwA1UA/exec";
+        // REPLACE WITH YOUR DEPLOYED GOOGLE WEB APP URL
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz7nfbkePUKPysiJX6-_yhXhZiCQmAw_SrvTiQGRCK6LmvnPyLbXB7_aZKtFhF5qCsYzA/exec";
 
-        async function handleUpload(e, sheetName) {
-            e.preventDefault();
-            const form = e.target;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const statusMsg = document.getElementById('status-msg');
+        lucide.createIcons();
 
-            // Collect form data
-            const formData = new FormData(form);
-            const payload = {
-                sheet: sheetName,
-                action: "insert"
-            };
-            formData.forEach((value, key) => payload[key] = value);
+        function switchTab(type) {
+            const worksheetBtn = document.getElementById('tab-worksheet');
+            const lectureBtn = document.getElementById('tab-lecture');
+            const descContainer = document.getElementById('desc-container');
+            const subjectContainer = document.getElementById('subject-container');
+            const urlLabel = document.getElementById('url-label');
+            const sheetType = document.getElementById('form-sheet-type');
 
-            // UI Loading state
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = `Uploading...`;
-
-            try {
-                await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                // Show success
-                statusMsg.className = "p-4 rounded-xl text-sm font-medium bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 block";
-                statusMsg.textContent = `Successfully added to ${sheetName}! Refresh your main website to view it.`;
-                form.reset();
-            } catch (error) {
-                console.error(error);
-                statusMsg.className = "p-4 rounded-xl text-sm font-medium bg-red-500/10 border border-red-500/30 text-red-400 block";
-                statusMsg.textContent = "Error saving data. Please check connection.";
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = `<i data-lucide="plus-circle" class="w-4 h-4"></i> Add ${sheetName === 'Worksheets' ? 'Worksheet' : 'Video'}`;
-                lucide.createIcons();
+            if (type === 'worksheet') {
+                sheetType.value = "Worksheets";
+                worksheetBtn.className = "px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-amber-500 text-black shadow-lg shadow-amber-500/10 transition";
+                lectureBtn.className = "px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-neutral-900 text-slate-400 border border-neutral-800 hover:text-white transition";
+                
+                descContainer.classList.remove('hidden');
+                subjectContainer.classList.add('hidden');
+                urlLabel.innerText = "PDF Document Link (Google Drive / Direct URL)";
+            } else {
+                sheetType.value = "Lectures";
+                lectureBtn.className = "px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-amber-500 text-black shadow-lg shadow-amber-500/10 transition";
+                worksheetBtn.className = "px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-neutral-900 text-slate-400 border border-neutral-800 hover:text-white transition";
+                
+                descContainer.classList.add('hidden');
+                subjectContainer.classList.remove('hidden');
+                urlLabel.innerText = "Video Link (YouTube / Google Drive Embed)";
             }
         }
 
-        lucide.createIcons();
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submit-btn');
+            const statusMsg = document.getElementById('status-message');
+            const sheetType = document.getElementById('form-sheet-type').value;
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Uploading to Database...";
+            statusMsg.classList.add('hidden');
+
+            const payload = {
+                sheet: sheetType,
+                grade: document.getElementById('grade-select').value,
+                title: document.getElementById('title-input').value,
+                description: document.getElementById('desc-input').value,
+                subject: document.getElementById('subject-input').value,
+                fileLink: document.getElementById('url-input').value,
+                videoUrl: document.getElementById('url-input').value
+            };
+
+            try {
+                await fetch(SCRIPT_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                statusMsg.className = "text-xs font-bold p-4 rounded-xl text-center bg-emerald-500/10 border border-emerald-500/20 text-emerald-400";
+                statusMsg.innerText = "Resource added successfully to Google Sheets!";
+                statusMsg.classList.remove('hidden');
+
+                // Reset inputs
+                document.getElementById('title-input').value = '';
+                document.getElementById('desc-input').value = '';
+                document.getElementById('subject-input').value = '';
+                document.getElementById('url-input').value = '';
+
+            } catch (err) {
+                statusMsg.className = "text-xs font-bold p-4 rounded-xl text-center bg-red-500/10 border border-red-500/20 text-red-400";
+                statusMsg.innerText = "Failed to submit resource: " + err.message;
+                statusMsg.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<i data-lucide="upload-cloud" class="h-4 w-4"></i> Upload Resource to Database`;
+                lucide.createIcons();
+            }
+        }
     </script>
 </body>
 </html>
