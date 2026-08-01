@@ -37,11 +37,11 @@
                 
                 <div class="hidden lg:flex items-center gap-6">
                     <a href="#about" class="text-slate-300 hover:text-amber-500 font-medium text-sm transition tracking-wide">About Platform</a>
-                    <a href="#portal-section" class="text-slate-300 hover:text-amber-500 font-medium text-sm transition tracking-wide">Class Portal</a>
+                    <a href="#core-values" class="text-slate-300 hover:text-amber-500 font-medium text-sm transition tracking-wide">Core Values</a>
+                    <a href="#programs" class="text-slate-300 hover:text-amber-500 font-medium text-sm transition tracking-wide">Programs</a>
                     <a href="#calendar" class="text-slate-300 hover:text-amber-500 font-medium text-sm transition tracking-wide">Core Calendar</a>
-                    <a href="#achievements" class="text-slate-300 hover:text-amber-500 font-medium text-sm transition tracking-wide">Success Stories</a>
+                    <a href="#portal-section" class="text-slate-300 hover:text-amber-500 font-medium text-sm transition tracking-wide">Student Portal</a>
                     
-                    <!-- Dynamic Auth Nav Button -->
                     <div id="nav-auth-container">
                         <button onclick="openLoginModal()" class="bg-amber-500 text-black px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-amber-400 transition shadow-lg shadow-amber-500/10 flex items-center gap-2">
                             <i data-lucide="log-in" class="h-4 w-4"></i> Student Login
@@ -57,12 +57,17 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-[#161616] border-b border-neutral-800 px-4 pt-2 pb-6 space-y-3">
             <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">About Platform</a>
+            <a href="#vision-mission" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Vision & Mission</a>
+            <a href="#core-values" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Core Values</a>
+            <a href="#programs" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Programs</a>
+            <a href="#unique-features" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Unique Features</a>
             <a href="#portal-section" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Class Portal</a>
             <a href="#calendar" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Annual Calendar</a>
-            <a href="#achievements" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-neutral-800">Success Stories</a>
+            <a href="SIR UZIAR (1).pdf" target="_blank" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg text-amber-400 font-bold hover:bg-neutral-800 flex items-center gap-2">
+                <i data-lucide="file-text" class="h-4 w-4"></i> Download Prospectus (PDF)
+            </a>
             <div id="mobile-auth-container">
                 <button onclick="toggleMobileMenu(); openLoginModal();" class="w-full text-center bg-amber-500 text-black px-4 py-3 rounded-xl font-bold">Student Login</button>
             </div>
@@ -88,6 +93,9 @@
                     </p>
                     <div class="flex flex-wrap gap-4 pt-4">
                         <a href="#enroll" class="bg-amber-500 hover:bg-amber-400 text-black font-extrabold px-8 py-4 rounded-xl transition shadow-xl shadow-amber-500/20 uppercase tracking-wide text-sm">Enroll Online Now</a>
+                        <a href="SIR UZIAR (1).pdf" target="_blank" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 text-slate-200 font-extrabold px-6 py-4 rounded-xl transition uppercase tracking-wide text-sm flex items-center gap-2">
+                            <i data-lucide="download" class="h-4 w-4 text-amber-500"></i> Download Prospectus
+                        </a>
                     </div>
                 </div>
                 
@@ -119,8 +127,199 @@
                     <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
                         The Institute of Productive Minds is currently a guidance and counseling platform. We provide parents and students with online facilities for timely education, computer courses, physical training, religious studies, social sciences, and community service opportunities.
                     </p>
-                    <div class="mt-4 p-4 bg-amber-500/5 border border-amber-500/10 rounded-xl text-sm text-amber-400">
-                        <strong>Note:</strong> The institute does not operate as a formal school or college; instead, it equips parents with a clear roadmap to facilitate early-age high achievement.
+                    <div class="mt-4 p-4 bg-amber-500/5 border border-amber-500/10 rounded-xl text-sm text-amber-400 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <strong>Note:</strong> The institute does not operate as a formal school or college; instead, it equips parents with a clear roadmap to facilitate early-age high achievement.
+                        </div>
+                        <a href="SIR UZIAR (1).pdf" target="_blank" class="shrink-0 text-xs font-bold bg-amber-500 text-black px-4 py-2 rounded-lg hover:bg-amber-400 transition flex items-center gap-1.5">
+                            <i data-lucide="file-text" class="h-4 w-4"></i> Read Prospectus
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Mission Section -->
+        <section id="vision-mission" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-neutral-900">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-[#161616] border border-neutral-800 p-8 rounded-3xl relative overflow-hidden group hover:border-amber-500/40 transition">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="eye" class="h-6 w-6"></i>
+                    </div>
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Our Foundation</span>
+                    <h3 class="text-2xl font-black text-white uppercase mb-4">Vision</h3>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        To nurture timely, productive individuals for the Ummah.
+                    </p>
+                </div>
+
+                <div class="bg-[#161616] border border-neutral-800 p-8 rounded-3xl relative overflow-hidden group hover:border-amber-500/40 transition">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="target" class="h-6 w-6"></i>
+                    </div>
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Our Purpose</span>
+                    <h3 class="text-2xl font-black text-white uppercase mb-4">Mission</h3>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        Providing students with timely access to higher education, modern technological skills, social sciences, physical strength, spiritual and ethical training, and opportunities for community service, so that by the age of 18 they become valuable assets for the Ummah.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <section id="core-values" class="py-20 bg-[#161616] border-y border-neutral-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Pillars of Growth</span>
+                    <h2 class="text-3xl font-black text-white uppercase tracking-tight">Core Values</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="heart" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Faith & Devotion</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Strengthening worship, spiritual grounding, and Islamic values.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="book-open" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Knowledge & Skills</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Academic excellence combined with modern skills and languages.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="cpu" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Technology & Innovation</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Early mastery of digital tools, coding, and creative tech.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="user-check" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Character Building</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Instilling honesty, patience, leadership, and moral integrity.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="activity" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Physical Strength</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Building fitness, martial arts discipline, and athletic health.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="globe" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Social Sciences & Welfare</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Understanding social issues, governance, and community structures.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="users" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Community Service</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Active participation in civic welfare and social aid projects.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-neutral-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition group">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-black transition">
+                            <i data-lucide="shield" class="h-6 w-6"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white uppercase mb-2">Asset for the Ummah</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Preparing impactful leaders and contributors for society.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs & Curriculum Section -->
+        <section id="programs" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Educational Framework</span>
+                <h2 class="text-3xl font-black text-white uppercase tracking-tight">Programs & Curriculum</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-[#161616] border border-neutral-800 p-6 rounded-2xl hover:border-amber-500/40 transition">
+                    <div class="text-amber-500 font-mono font-bold text-sm mb-2">01</div>
+                    <h4 class="text-lg font-bold text-white uppercase mb-2">Accelerated Learning</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Fast-track educational roadmap allowing completion of Matric & Intermediate by age 14.</p>
+                </div>
+
+                <div class="bg-[#161616] border border-neutral-800 p-6 rounded-2xl hover:border-amber-500/40 transition">
+                    <div class="text-amber-500 font-mono font-bold text-sm mb-2">02</div>
+                    <h4 class="text-lg font-bold text-white uppercase mb-2">University Admission by Age 15</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Direct path toward early higher education enrollment and specialized degree pathways.</p>
+                </div>
+
+                <div class="bg-[#161616] border border-neutral-800 p-6 rounded-2xl hover:border-amber-500/40 transition">
+                    <div class="text-amber-500 font-mono font-bold text-sm mb-2">03</div>
+                    <h4 class="text-lg font-bold text-white uppercase mb-2">Computer Courses</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Practical training in software, coding, and tech certifications (Aptech, Bano Qabil, etc.).</p>
+                </div>
+
+                <div class="bg-[#161616] border border-neutral-800 p-6 rounded-2xl hover:border-amber-500/40 transition">
+                    <div class="text-amber-500 font-mono font-bold text-sm mb-2">04</div>
+                    <h4 class="text-lg font-bold text-white uppercase mb-2">Physical Training</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Martial arts training including Taekwondo, agility drills, and competitive sports guidance.</p>
+                </div>
+
+                <div class="bg-[#161616] border border-neutral-800 p-6 rounded-2xl hover:border-amber-500/40 transition">
+                    <div class="text-amber-500 font-mono font-bold text-sm mb-2">05</div>
+                    <h4 class="text-lg font-bold text-white uppercase mb-2">Quran & Religious Studies</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Comprehensive Quranic recitation, Islamic history, and foundational spiritual studies.</p>
+                </div>
+
+                <div class="bg-[#161616] border border-neutral-800 p-6 rounded-2xl hover:border-amber-500/40 transition">
+                    <div class="text-amber-500 font-mono font-bold text-sm mb-2">06</div>
+                    <h4 class="text-lg font-bold text-white uppercase mb-2">Social Sciences & Community Service</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Understanding social development structures alongside active hands-on welfare projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unique Features Section -->
+        <section id="unique-features" class="py-20 bg-[#161616] border-t border-neutral-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Key Differentiators</span>
+                    <h2 class="text-3xl font-black text-white uppercase tracking-tight">Unique Features</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-[#111] border border-amber-500/20 p-6 rounded-2xl relative">
+                        <h4 class="text-amber-400 font-black text-base uppercase mb-2">Accelerated Learning</h4>
+                        <p class="text-slate-300 text-xs leading-relaxed">Fast-track completion of primary and secondary education without compromising core concept depth.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-amber-500/20 p-6 rounded-2xl relative">
+                        <h4 class="text-amber-400 font-black text-base uppercase mb-2">Holistic Development</h4>
+                        <p class="text-slate-300 text-xs leading-relaxed">Balanced focus across academic, physical, ethical, and social training dimensions.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-amber-500/20 p-6 rounded-2xl relative">
+                        <h4 class="text-amber-400 font-black text-base uppercase mb-2">Global Standards</h4>
+                        <p class="text-slate-300 text-xs leading-relaxed">Curriculum aligned with international models such as UNESCO, World Bank, and INEE frameworks.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div class="bg-[#111] border border-amber-500/20 p-6 rounded-2xl relative">
+                        <h4 class="text-amber-400 font-black text-base uppercase mb-2">Social Sciences Emphasis</h4>
+                        <p class="text-slate-300 text-xs leading-relaxed">Targeted preparation for future policymakers, educators, researchers, and community leaders.</p>
+                    </div>
+
+                    <div class="bg-[#111] border border-amber-500/20 p-6 rounded-2xl relative">
+                        <h4 class="text-amber-400 font-black text-base uppercase mb-2">Community Service Integration</h4>
+                        <p class="text-slate-300 text-xs leading-relaxed">Students actively participate in real-world relief drives, welfare projects, and civic action.</p>
                     </div>
                 </div>
             </div>
@@ -135,7 +334,7 @@
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mb-3">Class Subject Portal Restricted</h2>
                 <p class="text-slate-400 text-sm max-w-lg mx-auto mb-8 leading-relaxed">
-                    Please log in using your registered Student ID.
+                    Please log in using your registered Student ID
                 </p>
                 <button onclick="openLoginModal()" class="bg-amber-500 hover:bg-amber-400 text-black font-extrabold px-8 py-3.5 rounded-xl transition shadow-lg shadow-amber-500/10 uppercase text-xs tracking-wider inline-flex items-center gap-2">
                     <i data-lucide="user-check" class="h-4 w-4"></i> Enter Portal Credentials
@@ -144,7 +343,6 @@
 
             <!-- State 2: Authenticated / Logged In Dashboard -->
             <div id="student-dashboard" class="hidden space-y-8 animate-fadeIn">
-                <!-- Profile Header Banner -->
                 <div class="bg-gradient-to-r from-neutral-900 via-[#161616] to-neutral-900 border border-amber-500/30 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                     <div class="flex items-center gap-4">
                         <div class="w-16 h-16 rounded-2xl bg-amber-500 text-black font-black text-xl flex items-center justify-center shadow-lg shadow-amber-500/20" id="student-avatar-grade">
@@ -165,7 +363,6 @@
                     </button>
                 </div>
 
-                <!-- Assigned Subjects Grid Header -->
                 <div>
                     <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-6">
                         <div>
@@ -177,10 +374,7 @@
                         </span>
                     </div>
 
-                    <!-- Individual Subject Cards Container -->
-                    <div id="subjects-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <!-- Dynamic Subject Cards Injected via JS -->
-                    </div>
+                    <div id="subjects-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
                 </div>
             </div>
         </section>
@@ -362,39 +556,68 @@
             </div>
         </section>
 
-         <!-- Success Stories Section -->
+        <!-- Success Stories Section -->
         <section id="achievements" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-xs uppercase font-extrabold tracking-widest text-amber-500 block mb-2">Track Record</span>
                 <h2 class="text-3xl font-black text-white uppercase tracking-tight">Student Success Achievements</h2>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-[#161616] p-8 rounded-3xl border border-neutral-800 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-amber-500 text-black text-xs font-black uppercase px-4 py-1.5 rounded-bl-xl">15 Years Old</div>
-                    <h3 class="text-2xl font-black text-white uppercase tracking-wide mb-3">Aena</h3>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Pursuing BSCP</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> National Taekwondo Silver Medalist</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Finished core Tech & Quran tracks</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Active in social field services</li>
-                    </ul>
+                <!-- CLICKABLE AENA CARD -->
+                <div onclick="openStudentShowcaseTab('aena')" class="bg-[#161616] p-8 rounded-3xl border border-neutral-800 relative overflow-hidden cursor-pointer hover:border-amber-500/60 hover:bg-neutral-900/60 transition group shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="absolute top-0 right-0 bg-amber-500 text-black text-xs font-black uppercase px-4 py-1.5 rounded-bl-xl">15 Years Old</div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <h3 class="text-2xl font-black text-white uppercase tracking-wide group-hover:text-amber-400 transition">Aena</h3>
+                            <i data-lucide="external-link" class="h-4 w-4 text-amber-500 transition"></i>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Pursuing BSCP</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> National Taekwondo Silver Medalist</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Finished core Tech & Quran tracks</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Active in social field services</li>
+                        </ul>
+                    </div>
+                    <span class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 group-hover:underline">
+                        Open Full Showcase Page in New Tab <i data-lucide="arrow-up-right" class="h-3.5 w-3.5"></i>
+                    </span>
                 </div>
-                <div class="bg-[#161616] p-8 rounded-3xl border border-neutral-800 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-amber-500 text-black text-xs font-black uppercase px-4 py-1.5 rounded-bl-xl">12 Years Old</div>
-                    <h3 class="text-2xl font-black text-white uppercase tracking-wide mb-3">Hajra</h3>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Passed Grade 9 successfully</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Active Taekwondo Medalist</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Completed computer & Quran studies</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Engaged in community relief aid</li>
-                    </ul>
+
+                <!-- CLICKABLE HAJRAH CARD -->
+                <div onclick="openStudentShowcaseTab('hajrah')" class="bg-[#161616] p-8 rounded-3xl border border-neutral-800 relative overflow-hidden cursor-pointer hover:border-amber-500/60 hover:bg-neutral-900/60 transition group shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="absolute top-0 right-0 bg-amber-500 text-black text-xs font-black uppercase px-4 py-1.5 rounded-bl-xl">12 Years Old</div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <h3 class="text-2xl font-black text-white uppercase tracking-wide group-hover:text-amber-400 transition">Hajrah</h3>
+                            <i data-lucide="external-link" class="h-4 w-4 text-amber-500 transition"></i>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Passed Grade 9 successfully</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Active Taekwondo Medalist</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Completed computer & Quran studies</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-500 shrink-0"></i> Engaged in community relief aid</li>
+                        </ul>
+                    </div>
+                    <span class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 group-hover:underline">
+                        Open Full Showcase Page in New Tab <i data-lucide="arrow-up-right" class="h-3.5 w-3.5"></i>
+                    </span>
                 </div>
-                <div class="bg-[#161616] p-8 rounded-3xl border border-neutral-800 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-amber-500 text-black text-xs font-black uppercase px-4 py-1.5 rounded-bl-xl">07 Years Old</div>
-                    <h3 class="text-2xl font-black text-white uppercase tracking-wide mb-3">Barakah</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Currently being systematically nurtured under the exact same early acceleration framework model to hit key future targets early.
-                    </p>
+
+                <!-- CLICKABLE BARKAH CARD -->
+                <div onclick="openStudentShowcaseTab('barkah')" class="bg-[#161616] p-8 rounded-3xl border border-neutral-800 relative overflow-hidden cursor-pointer hover:border-amber-500/60 hover:bg-neutral-900/60 transition group shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="absolute top-0 right-0 bg-amber-500 text-black text-xs font-black uppercase px-4 py-1.5 rounded-bl-xl">07 Years Old</div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <h3 class="text-2xl font-black text-white uppercase tracking-wide group-hover:text-amber-400 transition">Barkah</h3>
+                            <i data-lucide="external-link" class="h-4 w-4 text-amber-500 transition"></i>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                            Currently being systematically nurtured under the exact same early acceleration framework model to hit key future targets early.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 group-hover:underline">
+                        Open Full Showcase Page in New Tab <i data-lucide="arrow-up-right" class="h-3.5 w-3.5"></i>
+                    </span>
                 </div>
             </div>
         </section>
@@ -413,7 +636,6 @@
                     </a>
                 </div>
 
-                <!-- Universal Direct WhatsApp Banner -->
                 <div class="mt-8 text-center bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
                     <p class="text-slate-300 text-sm font-medium mb-3">Have questions about admissions or the curriculum?</p>
                     <a href="https://wa.me/923122934347?text=Assalam-o-Alaikum!%20I%20have%20a%20question%20regarding%20the%20Institute%20of%20Productive%20Minds." target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold px-6 py-3 rounded-xl text-sm transition shadow-lg">
@@ -475,10 +697,7 @@
                 </div>
             </div>
 
-            <!-- List of Worksheet Links -->
-            <div id="worksheets-list" class="space-y-3 overflow-y-auto pr-2 flex-grow">
-                <!-- Dynamically injected via JS -->
-            </div>
+            <div id="worksheets-list" class="space-y-3 overflow-y-auto pr-2 flex-grow"></div>
 
             <div class="mt-6 pt-4 border-t border-neutral-800 flex justify-end">
                 <button onclick="closeWorksheetsModal()" class="bg-neutral-900 hover:bg-neutral-800 text-slate-300 font-bold px-6 py-2.5 rounded-xl text-xs transition border border-neutral-800">
@@ -489,21 +708,236 @@
     </div>
 
     <!-- Footer -->
-    <footer class="border-t border-neutral-900 bg-[#111] py-8 text-center text-xs text-slate-500">
+    <footer class="border-t border-neutral-900 bg-[#111] py-8 text-center text-xs text-slate-500 flex flex-col items-center gap-2">
         <p>&copy; 2026 Institute of Productive Minds. All rights reserved.</p>
+        <a href="SIR UZIAR (1).pdf" target="_blank" class="text-amber-500 hover:underline">Download Official Prospectus (PDF)</a>
     </footer>
+
+    <!-- Script to Generate Student Showcase Page in New Tab -->
+    <script>
+        const SHOWCASE_DATA = {
+            aena: {
+                name: "Aena",
+                age: 15,
+                subtitle: "Systematic Progress, Academic Acceleration & Competitive Martial Arts Portfolio",
+                milestones: [
+                    {
+                        period: "2023 - 2024",
+                        title: "Foundational Acceleration & Taekwondo Honors",
+                        desc: "Completed foundational web development coursework and core Quranic recitation studies. Earned early competition honors in local Taekwondo championships."
+                    },
+                    {
+                        period: "2024 - 2025",
+                        title: "National Silver Medal & Higher Tech Track",
+                        desc: "Secured National Taekwondo Silver Medal. Finished advanced computer science modules and led community relief initiatives for youth."
+                    },
+                    {
+                        period: "2025 - Present",
+                        title: "Pursuing BSCP & Advanced Community Service",
+                        desc: "Currently pursuing Bachelor-level computer studies (BSCP) at age 15 while actively executing field services and mentorship programs."
+                    }
+                ],
+                gallery: [
+                    {
+                        img: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&q=80&w=800",
+                        caption: "National Taekwondo Competition & Silver Medal Achievement"
+                    },
+                    {
+                        img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800",
+                        caption: "Advanced Computer Science & Academic Lab Sessions"
+                    },
+                    {
+                        img: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=800",
+                        caption: "Youth Civic Mentorship & Community Field Service"
+                    }
+                ]
+            },
+            hajrah: {
+                name: "Hajrah",
+                age: 12,
+                subtitle: "Early Academic Advancement, Taekwondo Mastery & Community Leadership",
+                milestones: [
+                    {
+                        period: "2023 - 2024",
+                        title: "Computer & Quranic Foundation",
+                        desc: "Completed primary computer applications and accelerated Quranic recitation curriculum early."
+                    },
+                    {
+                        period: "2024 - 2025",
+                        title: "Grade 9 Academic Success & Taekwondo Victories",
+                        desc: "Successfully passed Grade 9 board track exams at age 12 while winning medal positions in martial arts competitions."
+                    },
+                    {
+                        period: "2025 - Present",
+                        title: "Civic Relief & Youth Civic Engagement",
+                        desc: "Actively leading local civic aid distribution and community outreach programs."
+                    }
+                ],
+                gallery: [
+                    {
+                        img: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&q=80&w=800",
+                        caption: "Taekwondo Championship Honors & Athletic Training"
+                    },
+                    {
+                        img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800",
+                        caption: "Accelerated Academic & Computer Science Modules"
+                    },
+                    {
+                        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800",
+                        caption: "Community Relief Initiatives & Leadership"
+                    }
+                ]
+            },
+            barkah: {
+                name: "Barkah",
+                age: 7,
+                subtitle: "Systematic Early Acceleration & Early Child Development Roadmap",
+                milestones: [
+                    {
+                        period: "2024 - 2025",
+                        title: "Early Foundations & Primary Literacy",
+                        desc: "Initiated systematic early learning in reading, numerical reasoning, and basic computer exposure."
+                    },
+                    {
+                        period: "2025 - Present",
+                        title: "Physical Agility & Integrated Development",
+                        desc: "Enrolled in foundational physical agility exercises and Islamic moral character acceleration modules."
+                    }
+                ],
+                gallery: [
+                    {
+                        img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800",
+                        caption: "Early STEM & Creative Learning Activities"
+                    },
+                    {
+                        img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
+                        caption: "Physical Fitness & Agility Development"
+                    }
+                ]
+            }
+        };
+
+        function openStudentShowcaseTab(studentKey) {
+            const student = SHOWCASE_DATA[studentKey];
+            if (!student) return;
+
+            const newWindow = window.open('', '_blank');
+            if (!newWindow) {
+                alert('Please allow popups for this website to view the showcase in a new tab.');
+                return;
+            }
+
+            const htmlContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${student.name} — Student Portfolio Showcase</title>
+    <script src="https://cdn.tailwindcss.com"><\/script>
+    <script src="https://unpkg.com/lucide@latest"><\/script>
+</head>
+<body class="bg-[#111] text-slate-100 font-sans antialiased min-h-screen flex flex-col p-4 sm:p-8">
+    <div class="max-w-5xl mx-auto w-full flex-grow">
+        <!-- Top Navigation -->
+        <div class="flex items-center justify-between border-b border-neutral-800 pb-6 mb-8">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500 text-black font-black text-xl flex items-center justify-center shadow-lg shadow-amber-500/20">
+                    ${student.name.charAt(0)}
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black text-white uppercase leading-none">${student.name}</h1>
+                    <span class="text-xs text-amber-500 font-bold uppercase tracking-widest mt-1 block">Institute of Productive Minds</span>
+                </div>
+            </div>
+            <button onclick="window.close()" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-slate-300 font-bold px-4 py-2 rounded-xl text-xs transition">
+                ✕ Close Window
+            </button>
+        </div>
+
+        <!-- Banner Header -->
+        <div class="bg-gradient-to-r from-neutral-900 via-[#161616] to-neutral-900 border border-amber-500/30 rounded-3xl p-6 sm:p-10 mb-10 shadow-2xl relative overflow-hidden">
+            <div class="flex items-center gap-3 flex-wrap mb-2">
+                <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-bold px-3 py-1 rounded-full uppercase">Age ${student.age}</span>
+                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold px-3 py-1 rounded-full uppercase">Verified Achievement Record</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">${student.name} — Achievement Showcase</h2>
+            <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">${student.subtitle}</p>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="mb-12">
+            <h3 class="text-xl font-black text-white uppercase border-b border-neutral-800 pb-3 mb-6 flex items-center gap-2">
+                <i data-lucide="award" class="h-5 w-5 text-amber-500"></i> Year-Wise Roadmap & Milestones
+            </h3>
+            <div class="grid gap-4">
+                ${student.milestones.map(m => `
+                    <div class="bg-[#161616] p-6 rounded-2xl border border-neutral-800 flex flex-col sm:flex-row gap-4 hover:border-amber-500/40 transition">
+                        <div class="sm:w-32 text-amber-500 font-extrabold text-sm uppercase shrink-0">${m.period}</div>
+                        <div>
+                            <h4 class="text-white font-bold text-base mb-1">${m.title}</h4>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">${m.desc}</p>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="mb-12">
+            <h3 class="text-xl font-black text-white uppercase border-b border-neutral-800 pb-3 mb-6 flex items-center gap-2">
+                <i data-lucide="image" class="h-5 w-5 text-amber-500"></i> Photo Gallery & Visual Highlights
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                ${student.gallery.map(g => `
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-xl flex flex-col group">
+                        <div class="h-48 w-full overflow-hidden bg-black">
+                            <img src="${g.img}" alt="${g.caption}" onerror="this.src='https://placehold.co/800x500/111/f59e0b?text=Image+Unavailable';" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-4 bg-[#161616] flex-grow">
+                            <p class="text-xs text-slate-300 font-bold">${g.caption}</p>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Footer -->
+    <footer class="border-t border-neutral-900 pt-6 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Institute of Productive Minds — Official Student Portfolio Record.</p>
+    </footer>
+
+    <script>lucide.createIcons();<\/script>
+</body>
+</html>
+            `;
+
+            newWindow.document.write(htmlContent);
+            newWindow.document.close();
+        }
+    </script>
 
     <!-- Portal Logic Scripts -->
     <script>
-        // PDF Links for Worksheets
-        const KG_WORKSHEET_FILES = [
-             ];
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz7nfbkePUKPysiJX6-_yhXhZiCQmAw_SrvTiQGRCK6LmvnPyLbXB7_aZKtFhF5qCsYzA/exec";
+        let dynamicWorksheets = [];
 
-        // Database of Registered Class Profiles (KG to 12th Grade)
+        const KG_WORKSHEET_FILES = [
+            { title: "Worksheet Set 1 (PDF)", desc: "Tracing, colors, and initial letter exercises", url: "https://drive.google.com/file/d/12o30ETer9cX_erW5KvpDVwxTcfbHV1Es/view?usp=sharing" },
+            { title: "Worksheet Set 2 (PDF)", desc: "Phonics, picture matching, and basic counting", url: "https://drive.google.com/file/d/18v7dj2eyas6msVRNRTT7dXnflz9pWKAl/view?usp=sharing" },
+            { title: "Worksheet Set 3 (PDF)", desc: "Handwriting practice & basic line patterns", url: "https://drive.google.com/file/d/19wgkbj_fgQp4GxQm0LyKs9HRvGKolzye/view?usp=sharing" },
+            { title: "Worksheet Set 4 (PDF)", desc: "Early math shapes, sizes & object grouping", url: "https://drive.google.com/file/d/1BrKHNLzbxfMnyRgB03HgH_B_Ne5zEUo7/view?usp=sharing" },
+            { title: "Worksheet Set 5 (PDF)", desc: "Urdu Haroof-e-Tahajji tracing and activities", url: "https://drive.google.com/file/d/1HZpmEafeVoCZVBvYtVYXz0oDp6p3hCHS/view?usp=sharing" },
+            { title: "Worksheet Set 6 (PDF)", desc: "Sight words and vocabulary building sheets", url: "https://drive.google.com/file/d/1TjeDi-B9577rv2VIL2Z-foKg29RbmZQ7/view?usp=sharing" },
+            { title: "Worksheet Set 7 (PDF)", desc: "Simple addition and number counting sheets", url: "https://drive.google.com/file/d/1U5cbVZB7mK8NvLM4tUgI2iS0dXSiXowk/view?usp=sharing" },
+            { title: "Worksheet Set 8 (PDF)", desc: "Interactive coloring and activity worksheets", url: "https://drive.google.com/file/d/1hbQKNjsXB9zJiXU-zDD4QEa5NW8xc4XV/view?usp=sharing" }
+        ];
+
         const CLASS_DATABASE = {
             "STD-KG": {
                 id: "STD-KG",
-                grade: "KG / Pre-1",
+                grade: "KG",
                 title: "Kindergarten / Pre-1 Curricular Subjects & Worksheets",
                 track: "Early Years Foundation Track",
                 subjects: [
@@ -659,43 +1093,50 @@
                 track: "Higher Secondary Track (FSc / ICS / I.Com)",
                 subjects: [
                     { name: "Mathematics", icon: "calculator", desc: "Complex numbers, matrices, quadratic equations, sequence & trigonometry.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=m", type: "link" },
-                    { name: "Physics", icon: "zap", desc: "Measurements, vectors, work & energy, circular motion, waves & optics.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=p", type: "link" },
-                    { name: "Chemistry", icon: "flask-conical", desc: "Stoichiometry, atomic structure, gas laws, liquids & chemical equilibrium.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=c", type: "link" },
-                    { name: "Biology", icon: "dna", desc: "Cell structure, biological molecules, enzymes, kingdom animalia & botany.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=b", type: "link" },
-                    { name: "Computer Science", icon: "laptop", desc: "Information technology, data communications, networks & hardware.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=cs", type: "link" },
-                    { name: "English", icon: "book-open", desc: "Inter board plays, poems, short stories, essays and grammar.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=en", type: "link" },
-                    { name: "Urdu", icon: "languages", desc: "Inter board prose, ghazals, nazms, essay composition & grammar.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=u", type: "link" },
-                    { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
-                ]
-            },
-            "STD-12": {
-                id: "STD-12",
-                grade: "2nd Year (12th)",
-                title: "2nd Year Intermediate Board Track",
-                track: "Higher Secondary Track (FSc / ICS / I.Com)",
-                subjects: [
-                    { name: "Mathematics", icon: "calculator", desc: "Functions, limits, differentiation, integration & analytic geometry.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=m", type: "link" },
-                    { name: "Physics", icon: "zap", desc: "Electrostatics, current electricity, electromagnetism, modern physics & electronics.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=p", type: "link" },
-                    { name: "Chemistry", icon: "flask-conical", desc: "Periodic trends, s & p block elements, organic chemistry & biochemistry.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=c", type: "link" },
-                    { name: "Biology", icon: "dna", desc: "Homeostasis, support & movement, reproduction, genetics & evolution.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=b", type: "link" },
-                    { name: "Computer Science", icon: "laptop", desc: "Database concepts, MS Access, C programming language & data structures.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=cs", type: "link" },
-                    { name: "English", icon: "book-open", desc: "Modern essays, novel studies, essay composition & board prep.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=en", type: "link" },
-                    { name: "Urdu", icon: "languages", desc: "2nd Year literature, board essay writing & detailed poetry analysis.", url: "https://sabaq.pk/book-page.php?b=f&c=12&s=u", type: "link" },
+                    { name: "Physics", icon: "zap", desc: "Vectors, motion, work & energy, circular motion, fluid dynamics & optics.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=p", type: "link" },
+                    { name: "Chemistry", icon: "flask-conical", desc: "Stoichiometry, atomic structure, gases, liquids, solids & chemical equilibrium.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=c", type: "link" },
+                    { name: "Biology", icon: "dna", desc: "Cell structure, biological molecules, enzymes, kingdom animalia & bioenergetics.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=b", type: "link" },
+                    { name: "Computer Science", icon: "laptop", desc: "Overview of IT, hardware, software, architecture & data communications.", url: "https://sabaq.pk/book-page.php?b=f&c=11&s=cs", type: "link" },
                     { name: "Worksheets", icon: "file-text", desc: "Access printable PDF worksheets for practice.", type: "modal" }
                 ]
             }
         };
 
-        // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Check Active Session
         document.addEventListener('DOMContentLoaded', () => {
             const savedStudent = sessionStorage.getItem('activeStudentId');
             if (savedStudent && CLASS_DATABASE[savedStudent]) {
                 renderStudentDashboard(CLASS_DATABASE[savedStudent]);
             }
         });
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function switchTab(month) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-black');
+                btn.classList.add('text-slate-400');
+            });
+
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            document.getElementById('content-placeholder').classList.add('hidden');
+
+            const activeBtn = document.getElementById(`btn-${month}`);
+            const activeContent = document.getElementById(`content-${month}`);
+
+            if (activeBtn && activeContent) {
+                activeBtn.classList.add('bg-amber-500', 'text-black');
+                activeBtn.classList.remove('text-slate-400');
+                activeContent.classList.remove('hidden');
+            }
+        }
 
         function openLoginModal() {
             document.getElementById('login-modal').classList.remove('hidden');
@@ -721,105 +1162,94 @@
             }
         }
 
-        // Render Worksheets Sub-Modal
- function openWorksheetsModal() {
-    const container = document.getElementById('worksheets-list');
-    container.innerHTML = '';
-
-    const savedStudent = sessionStorage.getItem('activeStudentId');
-    const activeStudentData = savedStudent ? CLASS_DATABASE[savedStudent] : null;
-    const studentGrade = activeStudentData ? activeStudentData.grade : "Class";
-    
-    document.getElementById('modal-grade-title').innerText = `${studentGrade} Worksheets Repository`;
-
-    // 1. Determine base source
-    const rawList = dynamicWorksheets.length > 0 ? dynamicWorksheets : KG_WORKSHEET_FILES;
-
-    // 2. Filter list by comparing Grade/Class with flexible KG matching
-    const filteredList = rawList.filter(file => {
-        // If fallback static files (without grade properties) are used
-        if (!file.Grade && !file.grade) {
-            return studentGrade.toLowerCase().includes("kg");
+        function logoutStudent() {
+            sessionStorage.removeItem('activeStudentId');
+            document.getElementById('student-dashboard').classList.add('hidden');
+            document.getElementById('locked-view').classList.remove('hidden');
         }
 
-        const fileGrade = (file.Grade || file.grade || "").toString().trim().toLowerCase();
-        const currentGrade = studentGrade.toString().trim().toLowerCase();
+        async function openWorksheetsModal() {
+            const container = document.getElementById('worksheets-list');
+            container.innerHTML = `<div class="text-center py-8 text-amber-500 font-bold">Loading worksheets from database...</div>`;
+            document.getElementById('worksheets-modal').classList.remove('hidden');
 
-        // Handle KG variations (e.g., "KG", "KG / Pre-1", "Kindergarten")
-        if (currentGrade.includes("kg") || currentGrade.includes("kindergarten")) {
-            return fileGrade.includes("kg") || fileGrade.includes("kindergarten");
+            const savedStudent = sessionStorage.getItem('activeStudentId');
+            const activeStudentData = savedStudent ? CLASS_DATABASE[savedStudent] : null;
+            const studentGrade = activeStudentData ? activeStudentData.grade : "Class";
+            
+            document.getElementById('modal-grade-title').innerText = `${studentGrade} Worksheets Repository`;
+
+            try {
+                const res = await fetch(`${SCRIPT_URL}?sheet=Worksheets`);
+                dynamicWorksheets = await res.json();
+            } catch (err) {
+                console.error("Error fetching live sheets data:", err);
+                dynamicWorksheets = [];
+            }
+
+            container.innerHTML = '';
+            const rawList = dynamicWorksheets.length > 0 ? dynamicWorksheets : KG_WORKSHEET_FILES;
+
+            const filteredList = rawList.filter(file => {
+                const fileGrade = (file.Grade || file.grade || "").toString().trim().toLowerCase();
+                const currentGrade = studentGrade.toString().trim().toLowerCase();
+
+                if (!fileGrade) return currentGrade.includes("kg");
+                return fileGrade === currentGrade || fileGrade.replace('class', '').trim() === currentGrade.replace('class', '').trim();
+            });
+
+            if (filteredList.length === 0) {
+                container.innerHTML = `<div class="text-center py-8 text-slate-400"><p class="text-sm">No worksheets available for ${studentGrade} yet.</p></div>`;
+                return;
+            }
+
+            filteredList.forEach((file, idx) => {
+                const item = document.createElement('a');
+                const fileTitle = file.Title || file.title || "Untitled Worksheet";
+                const fileDesc = file.Description || file.desc || "No description provided";
+                const fileUrl = file.FileLink || file.url || "#";
+
+                item.href = fileUrl;
+                item.target = "_blank";
+                item.rel = "noopener noreferrer";
+                item.className = "flex items-center justify-between p-4 rounded-2xl bg-[#111] border border-neutral-800 hover:border-amber-500/50 hover:bg-neutral-900 transition group";
+
+                item.innerHTML = `
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-xs group-hover:bg-amber-500 group-hover:text-black transition">
+                            ${idx + 1 < 10 ? '0' + (idx + 1) : idx + 1}
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-bold text-white group-hover:text-amber-400 transition">${fileTitle}</h5>
+                            <p class="text-xs text-slate-400">${fileDesc}</p>
+                        </div>
+                    </div>
+                    <span class="text-xs text-amber-500 font-bold flex items-center gap-1 group-hover:translate-x-1 transition">
+                        Open PDF <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
+                    </span>
+                `;
+                container.appendChild(item);
+            });
+
+            lucide.createIcons();
         }
 
-        // Standard comparison for other grades (e.g., "Class 8" vs "8")
-        const cleanFileGrade = fileGrade.replace('class', '').trim();
-        const cleanCurrentGrade = currentGrade.replace('class', '').trim();
-
-        return fileGrade === currentGrade || cleanFileGrade === cleanCurrentGrade;
-    });
-
-    // 3. Handle empty state if no worksheets exist for this grade
-    if (filteredList.length === 0) {
-        container.innerHTML = `
-            <div class="text-center py-8 text-slate-400">
-                <p class="text-sm">No worksheets available for ${studentGrade} yet.</p>
-            </div>
-        `;
-        document.getElementById('worksheets-modal').classList.remove('hidden');
-        return;
-    }
-
-    // 4. Render matched worksheets
-    filteredList.forEach((file, idx) => {
-        const item = document.createElement('a');
-        
-        const fileTitle = file.Title || file.title || "Untitled Worksheet";
-        const fileDesc = file.Description || file.desc || "No description provided";
-        const fileUrl = file.FileLink || file.url || "#";
-
-        item.href = fileUrl;
-        item.target = "_blank";
-        item.rel = "noopener noreferrer";
-        item.className = "flex items-center justify-between p-4 rounded-2xl bg-[#111] border border-neutral-800 hover:border-amber-500/50 hover:bg-neutral-900 transition group";
-
-        item.innerHTML = `
-            <div class="flex items-center gap-3.5">
-                <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-xs group-hover:bg-amber-500 group-hover:text-black transition">
-                    0${idx + 1}
-                </div>
-                <div>
-                    <h5 class="text-sm font-bold text-white group-hover:text-amber-400 transition">${fileTitle}</h5>
-                    <p class="text-xs text-slate-400">${fileDesc}</p>
-                </div>
-            </div>
-            <span class="text-xs text-amber-500 font-bold flex items-center gap-1 group-hover:translate-x-1 transition">
-                Open PDF <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
-            </span>
-        `;
-        container.appendChild(item);
-    });
-
-    document.getElementById('worksheets-modal').classList.remove('hidden');
-    lucide.createIcons();
-}
         function closeWorksheetsModal() {
             document.getElementById('worksheets-modal').classList.add('hidden');
         }
 
-        // Render Student Dashboard
         function renderStudentDashboard(student) {
             document.getElementById('locked-view').classList.add('hidden');
             const dashboard = document.getElementById('student-dashboard');
             dashboard.classList.remove('hidden');
 
-            // Header Info
-            document.getElementById('student-avatar-grade').innerText = student.grade.includes('KG') ? 'KG' : student.grade.replace('Class ', '').replace(' (11th)', '').replace(' (12th)', '');
+            document.getElementById('student-avatar-grade').innerText = student.grade.includes('KG') ? 'KG' : student.grade.replace('Class ', '').replace('1st Year (11th)', '11');
             document.getElementById('student-display-name').innerText = `${student.grade} Student`;
             document.getElementById('student-display-id').innerText = student.id;
             document.getElementById('student-display-class').innerText = student.grade;
             document.getElementById('dashboard-class-title').innerText = student.title;
             document.getElementById('dashboard-track-badge').innerText = student.track;
 
-            // Render Dynamic Subject Cards
             const grid = document.getElementById('subjects-grid');
             grid.innerHTML = '';
 
@@ -836,8 +1266,8 @@
                     `;
                 } else {
                     actionButtonHtml = `
-                        <a href="${sub.url}" target="_blank" rel="noopener noreferrer" class="w-full bg-neutral-900 hover:bg-amber-500 hover:text-black border border-neutral-800 hover:border-amber-500 text-amber-500 font-extrabold text-xs uppercase py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
-                            Open ${sub.name} <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
+                        <a href="${sub.url}" target="_blank" rel="noopener noreferrer" class="w-full bg-neutral-900 hover:bg-amber-500 hover:text-black border border-neutral-700 text-slate-200 font-extrabold text-xs uppercase py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-md group-hover:border-amber-500">
+                            Study ${sub.name} <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
                         </a>
                     `;
                 }
@@ -853,85 +1283,13 @@
                         <h4 class="text-xl font-black text-white uppercase mb-2 group-hover:text-amber-400 transition">${sub.name}</h4>
                         <p class="text-slate-400 text-xs leading-relaxed mb-6">${sub.desc}</p>
                     </div>
-
                     ${actionButtonHtml}
                 `;
-
                 grid.appendChild(card);
             });
 
-            // Update Auth Nav Button
-            const navAuth = document.getElementById('nav-auth-container');
-            navAuth.innerHTML = `
-                <button onclick="logoutStudent()" class="border border-neutral-800 bg-neutral-900 hover:bg-neutral-800 text-amber-500 font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-2">
-                    <i data-lucide="user" class="h-4 w-4"></i> ${student.grade} Portal (Exit)
-                </button>
-            `;
-
             lucide.createIcons();
         }
-
-        function logoutStudent() {
-            sessionStorage.removeItem('activeStudentId');
-            document.getElementById('student-dashboard').classList.add('hidden');
-            document.getElementById('locked-view').classList.remove('hidden');
-
-            const navAuth = document.getElementById('nav-auth-container');
-            navAuth.innerHTML = `
-                <button onclick="openLoginModal()" class="bg-amber-500 text-black px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-amber-400 transition shadow-lg shadow-amber-500/10 flex items-center gap-2">
-                    <i data-lucide="log-in" class="h-4 w-4"></i> Student Login
-                </button>
-            `;
-
-            lucide.createIcons();
-        }
-
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-
-        function switchTab(month) {
-            const placeholder = document.getElementById('content-placeholder');
-            if (placeholder) placeholder.classList.add('hidden');
-
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.add('hidden'));
-
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-amber-500', 'text-black');
-                btn.classList.add('text-slate-400', 'hover:text-white');
-            });
-
-            const selectedContent = document.getElementById('content-' + month);
-            if (selectedContent) selectedContent.classList.remove('hidden');
-
-            const selectedBtn = document.getElementById('btn-' + month);
-            if (selectedBtn) {
-                selectedBtn.classList.remove('text-slate-400', 'hover:text-white');
-                selectedBtn.classList.add('bg-amber-500', 'text-black');
-            }
-        }
-    </script>
-    
-    <script>
-        const DASHBOARD_API_URL = "https://script.google.com/macros/s/AKfycbxoZ23L9HWQnrkia1vSTNGPTvAYfbHcVDRGEprQpUdp_84TANXuk-6qID2Ww91ViwA1UA/exec";
-
-        let dynamicWorksheets = [];
-
-        async function fetchDashboardData() {
-            try {
-                const response = await fetch(DASHBOARD_API_URL);
-                const data = await response.json();
-                dynamicWorksheets = data.worksheets || [];
-            } catch (error) {
-                console.error("Error fetching data from Google Sheets:", error);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            fetchDashboardData();
-        });
     </script>
 </body>
 </html>
