@@ -290,17 +290,19 @@
         /* Interactive Program Card Image */
         .card-img-container {
             width: 100%;
-            height: 190px;
+            height: 240px;
             border-radius: 14px;
             margin-bottom: 1.2rem;
             overflow: hidden;
             position: relative;
+            background: #f1f5f9;
         }
 
         .card-img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top center;
             transition: transform 0.5s ease;
         }
 
@@ -315,12 +317,12 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to top, rgba(15, 23, 42, 0.5), transparent);
-            opacity: 0.5;
+            opacity: 0.3;
             transition: opacity 0.3s;
         }
 
         .program-card:hover .card-img-overlay {
-            opacity: 0.7;
+            opacity: 0.5;
         }
 
         .card-tag-badge {
@@ -363,6 +365,72 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: #475569;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--secondary);
+            position: absolute;
+            top: -1.5rem;
+            left: -1rem;
+            opacity: 0.3;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary-dark);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            color: var(--dark);
+        }
+
+        .author-info span {
+            font-size: 0.8rem;
+            color: #64748B;
         }
 
         /* Modal Styles */
@@ -422,16 +490,17 @@
 
         .modal-header-img {
             width: 100%;
-            height: 220px;
+            max-height: 350px;
             border-radius: 16px;
             overflow: hidden;
             margin-bottom: 1.5rem;
+            background: #F8FAFC;
         }
 
         .modal-header-img img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         .modal-header {
@@ -466,6 +535,76 @@
             font-size: 0.9rem;
             color: #334155;
         }
+
+        /* Registration Forms Section */
+        .forms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .form-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.8rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .form-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .form-card p {
+            color: #64748B;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Social Media Section */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            text-decoration: none;
+            color: var(--dark);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .facebook-bg { background: #1877F2; }
 
         /* Connect Banner */
         .connect-section {
@@ -542,6 +681,8 @@
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#programs">Courses & Programs</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#forms">Register</a></li>
             <li><a href="#connect">Connect</a></li>
         </ul>
         <a href="https://wa.me/923350253872" target="_blank" class="btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
@@ -597,7 +738,7 @@
             <!-- Wisdom Weavers -->
             <div class="program-card" onclick="openModal('wisdom-weavers')">
                 <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" alt="Wisdom Weavers Classroom">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczNtANnkHMGzKV_GwR2P_jPxpZuvXQxyTMNcT509SHA66Pfcb2FJ4znHR9BuD_1sAvHNWlWjlXA9W6VBQq87zCeFU4osq7VzyLKlDAVRm-33djt6tptP6ZeelDVqox0PY86dZ32vGqEDI1_WDiZ1Nz8I=w493-h739-s-no-gm?authuser=0" alt="Wisdom Weavers Poster">
                     <div class="card-img-overlay"></div>
                     <span class="card-tag-badge">Ages 6–12</span>
                 </div>
@@ -610,13 +751,13 @@
             <!-- Kirdar -->
             <div class="program-card" onclick="openModal('kirdar')">
                 <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" alt="KIRDAR Character Building">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMc04vgBpCsFcs1LQnoITv5HxeNAXJBN6F5O6QsCqK7TCts4dgCprFuKCMwcC_Qw8xKy0W2BsBPP6G7rtZmwsNzEu3UfDNR3TZO0stwxZDaW27oerieyHOEBYX55HuSf2rjqBffRoA3KCiQuClDXNoe=w493-h739-s-no-gm?authuser=0" alt="The Mirror Within - Kirdar Poster">
                     <div class="card-img-overlay"></div>
                     <span class="card-tag-badge">Transformation</span>
                 </div>
-                <h3>KIRDAR</h3>
+                <h3>KIRDAR - The Mirror Within</h3>
                 <div class="price-tag">RS 8,000 <span style="text-decoration: line-through; color: #94A3B8; font-size: 0.85rem;">RS 12,000</span></div>
-                <p>Transform your beliefs, transform your life. A dedicated program for belief transformation and perspective shifts.</p>
+                <p>Your Intentions. Your Character. Your Reality. A dedicated program for belief transformation and perspective shifts.</p>
                 <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
@@ -645,6 +786,123 @@
                 <p>Interactive games, storytelling, Quran as a life filter, science links, and practical deed challenges.</p>
                 <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials" style="background: rgba(108, 92, 231, 0.03);">
+        <div class="section-title">
+            <h2>Community Feedback & Reviews</h2>
+            <p>Real experiences shared by participants of our introductory sessions and courses.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Musfirah ap ka intro session kirdar per buhot acha tha Ma Sha Allah. Eye opening session tha jisne mere mindset ko ak new angle se dekhne ka moqa diya Alhamdulillah. I highly recommend this course to everyone."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">U</div>
+                    <div class="author-info">
+                        <h4>Umm e Faisal</h4>
+                        <span>KIRDAR Intro Session Participant</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "It was a great session, very thought provoking! The reflection questions help you come out of your comfort zone and find out what is stopping you from achieving your goals."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">R</div>
+                    <div class="author-info">
+                        <h4>Reja Humayun</h4>
+                        <span>Leaders' Loom Member</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "A really wonderful session MashaAllah. Reflective, thought provoking, interactive session."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">M</div>
+                    <div class="author-info">
+                        <h4>Maryum Akram</h4>
+                        <span>Leaders' Loom Member</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Forms Section -->
+    <section class="section" id="forms">
+        <div class="section-title">
+            <h2>Registration Forms</h2>
+            <p>Select a program below to open the official Google Form registration.</p>
+        </div>
+
+        <div class="forms-grid">
+            <div class="form-card">
+                <div>
+                    <h3>Registration Form 1</h3>
+                    <p>Apply directly for upcoming sessions and workshops.</p>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFRWwQcAisuCOtdm5hafbh6Sm6Ftw0YuPB46EftyX-XSmx0Q/viewform?usp=publish-editor" target="_blank" class="btn">Open Form <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; margin-left: 0.3rem;"></i></a>
+            </div>
+
+            <div class="form-card">
+                <div>
+                    <h3>Registration Form 2</h3>
+                    <p>Register for specialized coaching & mentorship programs.</p>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSejSfi4xO1i31ky4v5al-l5lJRXkpiYQ1y2FxYSLqZsadOgHA/viewform?usp=publish-editor" target="_blank" class="btn">Open Form <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; margin-left: 0.3rem;"></i></a>
+            </div>
+
+            <div class="form-card">
+                <div>
+                    <h3>Registration Form 3</h3>
+                    <p>General enrollment and query submission form.</p>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScvADYqGs7x-2y2ny86qakxSbj5GI1BJnSwQ351uW6zgG-1pg/viewform?usp=header" target="_blank" class="btn">Open Form <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; margin-left: 0.3rem;"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="section" id="social" style="padding-top: 2rem;">
+        <div class="section-title">
+            <h2>Featured Videos & Content</h2>
+            <p>Watch latest highlights, reels, and video posts from Coach Musfirah Akram.</p>
+        </div>
+
+        <div class="social-grid">
+            <a href="https://www.facebook.com/share/v/1Bu56diaYs/" target="_blank" class="social-card">
+                <div class="social-icon facebook-bg"><i class="fa-brands fa-facebook-f"></i></div>
+                <div>
+                    <h4 style="font-size: 1rem;">Facebook Video Highlight</h4>
+                    <span style="font-size: 0.85rem; color: #64748B;">Watch Video on Facebook</span>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/share/r/1L6vf6uBua/" target="_blank" class="social-card">
+                <div class="social-icon facebook-bg"><i class="fa-brands fa-facebook-f"></i></div>
+                <div>
+                    <h4 style="font-size: 1rem;">Facebook Reel Highlight</h4>
+                    <span style="font-size: 0.85rem; color: #64748B;">Watch Reel on Facebook</span>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/share/p/1E5KRxHPDf/" target="_blank" class="social-card">
+                <div class="social-icon facebook-bg"><i class="fa-brands fa-facebook-f"></i></div>
+                <div>
+                    <h4 style="font-size: 1rem;">Facebook Featured Post</h4>
+                    <span style="font-size: 0.85rem; color: #64748B;">View Post on Facebook</span>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -701,12 +959,12 @@
     </footer>
 
     <script>
-        // Program Data Details with Real Camera Image Links
+        // Program Data Details with Real Poster Images
         const programData = {
             'wisdom-weavers': {
                 title: 'Wisdom Weavers (Integrated Learning Through Quran)',
                 tag: 'Age Group: 6–12 Years',
-                img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800',
+                img: 'https://lh3.googleusercontent.com/pw/AP1GczNtANnkHMGzKV_GwR2P_jPxpZuvXQxyTMNcT509SHA66Pfcb2FJ4znHR9BuD_1sAvHNWlWjlXA9W6VBQq87zCeFU4osq7VzyLKlDAVRm-33djt6tptP6ZeelDVqox0PY86dZ32vGqEDI1_WDiZ1Nz8I=w493-h739-s-no-gm?authuser=0',
                 meta: '<strong>Start Date:</strong> August 4th | <strong>Schedule:</strong> Tuesdays & Thursdays (8 Sessions) | <strong>Timing:</strong> 4:30 – 5:15 PM PST | <strong>Fee:</strong> RS 7,500/month (Actual RS 10,000 - 35% Discount) | <strong>Platform:</strong> Online via Zoom (Kahoot Interactive)',
                 description: 'An integrated learning experience linking core subjects to Quranic principles, helping children develop strong character, wise decision-making, and daily fruitful habits.',
                 highlights: [
@@ -719,16 +977,17 @@
                 ]
             },
             'kirdar': {
-                title: 'KIRDAR',
+                title: 'KIRDAR - The Mirror Within',
                 tag: 'Belief Transformation Program',
-                img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800',
+                img: 'https://lh3.googleusercontent.com/pw/AP1GczMc04vgBpCsFcs1LQnoITv5HxeNAXJBN6F5O6QsCqK7TCts4dgCprFuKCMwcC_Qw8xKy0W2BsBPP6G7rtZmwsNzEu3UfDNR3TZO0stwxZDaW27oerieyHOEBYX55HuSf2rjqBffRoA3KCiQuClDXNoe=w493-h739-s-no-gm?authuser=0',
                 meta: '<strong>Start Date:</strong> Starting from 7th of July | <strong>Schedule:</strong> Tuesdays and Thursdays | <strong>Discounted Price:</strong> RS 8,000 (Actual: RS 12,000) | <strong>Contact:</strong> +92 335 0253872',
-                description: 'A transformative course designed by Musfirah Akram to help individuals challenge limiting beliefs, shift perspective, and build unshakeable character (Kirdar).',
+                description: 'A transformative course designed by Musfirah Akram to help individuals challenge limiting beliefs, shift perspective, and build unshakeable character (Kirdar). What lives within you shapes how you see life.',
                 highlights: [
-                    'Gold Values vs. Shackles of Worldly Values (Ego, Regret, Anxiety, Sadness vs. Truth, Honesty, Compassion, Justice, Gratitude).',
-                    'Identifying root belief structures and reframing negative perspective patterns.',
-                    'Developing resilience, emotional stability, and self-worth.',
-                    'Practical exercises to align daily behavior with core faith-based values.'
+                    'Intentions, Thoughts, Actions, Habits, Character, & Destiny framework.',
+                    'Sincere Intentions bring Allah’s pleasure and inner peace.',
+                    'Pure Heart leads to truthful words and actions.',
+                    'Strong Kirdar builds trust, respect, and impact.',
+                    'Beautiful Legacy is left by those who work on themselves.'
                 ]
             },
             'one-on-one': {
