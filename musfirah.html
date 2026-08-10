@@ -42,23 +42,36 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 8%;
-            background: rgba(255, 255, 255, 0.85);
+            padding: 0.8rem 8%;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
             z-index: 1000;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             color: var(--primary-dark);
             text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.8rem;
             list-style: none;
         }
 
@@ -67,6 +80,7 @@
             color: var(--dark);
             font-weight: 600;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
@@ -84,6 +98,9 @@
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .btn:hover {
@@ -96,7 +113,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 0 8%;
+            padding: 6rem 8% 2rem 8%;
             position: relative;
             background: radial-gradient(circle at 80% 20%, #f1f0ff 0%, #f8fafc 60%);
             gap: 3rem;
@@ -109,7 +126,9 @@
         }
 
         .badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             background: rgba(108, 92, 231, 0.1);
             color: var(--primary);
             padding: 0.4rem 1rem;
@@ -120,7 +139,7 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             line-height: 1.2;
             margin-bottom: 0.5rem;
             background: linear-gradient(135deg, var(--dark), var(--primary-dark));
@@ -129,7 +148,7 @@
         }
 
         .hero h2 {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: var(--primary);
             margin-bottom: 1rem;
             font-weight: 600;
@@ -174,12 +193,13 @@
         .interactive-hero-img-wrapper {
             position: relative;
             width: 100%;
-            max-width: 440px;
+            max-width: 420px;
             border-radius: 24px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(108, 92, 231, 0.2);
             transition: transform 0.5s ease, box-shadow 0.5s ease;
             animation: floatImage 6s ease-in-out infinite;
+            background: #ffffff;
         }
 
         .interactive-hero-img-wrapper:hover {
@@ -189,7 +209,7 @@
 
         .interactive-hero-img-wrapper img {
             width: 100%;
-            height: 480px;
+            height: 460px;
             object-fit: cover;
             display: block;
             transition: transform 0.6s ease;
@@ -201,12 +221,12 @@
 
         .hero-img-badge {
             position: absolute;
-            bottom: 1.5rem;
-            left: 1.5rem;
-            right: 1.5rem;
-            background: rgba(255, 255, 255, 0.92);
+            bottom: 1.2rem;
+            left: 1.2rem;
+            right: 1.2rem;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 1rem 1.2rem;
+            padding: 0.9rem 1.2rem;
             border-radius: 16px;
             display: flex;
             align-items: center;
@@ -231,9 +251,106 @@
             50% { transform: translateY(-12px); }
         }
 
+        /* Full Width Video Showcase Section (White Background Theme) */
+        .video-section-fullwidth {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            padding: 4rem 0 0 0;
+            background: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .video-section-header {
+            text-align: center;
+            padding: 0 8% 2rem 8%;
+            color: var(--dark);
+        }
+
+        .video-section-header h2 {
+            font-size: 2.3rem;
+            color: var(--dark);
+        }
+
+        .video-section-header p {
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .fullwidth-video-wrapper {
+            position: relative;
+            width: 100%;
+            max-height: 80vh;
+            background: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fullwidth-video-wrapper video {
+            width: 100%;
+            height: 100%;
+            max-height: 80vh;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-overlay-bar {
+            background: #F8FAFC;
+            padding: 1.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .video-overlay-info h3 {
+            font-size: 1.35rem;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .video-overlay-info h3 i {
+            color: var(--primary);
+        }
+
+        .video-overlay-info p {
+            color: #64748B;
+            font-size: 0.95rem;
+        }
+
+        .sound-toggle-btn {
+            background: #FFFFFF;
+            color: var(--dark);
+            border: 1px solid #CBD5E1;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .sound-toggle-btn:hover {
+            background: #F1F5F9;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
         /* Programs Section */
         .section {
-            padding: 6rem 8%;
+            padding: 5rem 8%;
         }
 
         .section-title {
@@ -242,7 +359,7 @@
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: var(--dark);
         }
 
@@ -288,7 +405,7 @@
 
         .card-img-container {
             width: 100%;
-            height: 240px;
+            height: 220px;
             border-radius: 14px;
             margin-bottom: 1.2rem;
             overflow: hidden;
@@ -327,9 +444,9 @@
             position: absolute;
             top: 0.8rem;
             right: 0.8rem;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.95);
             color: var(--primary-dark);
-            padding: 0.3rem 0.77rem;
+            padding: 0.3rem 0.75rem;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 700;
@@ -337,7 +454,7 @@
         }
 
         .program-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 0.5rem;
             color: var(--dark);
         }
@@ -365,10 +482,10 @@
             gap: 0.5rem;
         }
 
-        /* Text-Only Interactive Testimonials Section */
+        /* Testimonials Section */
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -376,7 +493,7 @@
         .testimonial-card {
             background: var(--card-bg);
             border-radius: 24px;
-            padding: 2.2rem;
+            padding: 2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             border: 1px solid rgba(108, 92, 231, 0.08);
             display: flex;
@@ -431,27 +548,23 @@
         }
 
         .testimonial-text {
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             color: #334155;
             line-height: 1.65;
-            margin-bottom: 1.8rem;
-            font-style: normal;
-            font-weight: 400;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 1.5rem;
         }
 
         .testimonial-author {
             display: flex;
             align-items: center;
             gap: 1rem;
-            padding-top: 1.2rem;
+            padding-top: 1rem;
             border-top: 1px solid #F1F5F9;
         }
 
         .author-avatar {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
@@ -459,21 +572,20 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             box-shadow: 0 4px 10px rgba(108, 92, 231, 0.25);
             flex-shrink: 0;
         }
 
         .author-info h4 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--dark);
             font-weight: 700;
         }
 
         .author-info span {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: #64748B;
-            font-weight: 500;
         }
 
         /* Modal Styles */
@@ -499,7 +611,7 @@
             width: 100%;
             max-height: 90vh;
             overflow-y: auto;
-            padding: 2.5rem;
+            padding: 2.2rem;
             position: relative;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             animation: modalFadeIn 0.3s ease-out;
@@ -533,7 +645,7 @@
 
         .modal-header-img {
             width: 100%;
-            max-height: 350px;
+            max-height: 300px;
             border-radius: 16px;
             overflow: hidden;
             margin-bottom: 1.5rem;
@@ -598,15 +710,26 @@
             justify-content: space-between;
         }
 
+        .form-card-badge {
+            display: inline-block;
+            background: rgba(108, 92, 231, 0.1);
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
         .form-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-bottom: 0.5rem;
             color: var(--dark);
         }
 
         .form-card p {
             color: #64748B;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin-bottom: 1.5rem;
         }
 
@@ -654,21 +777,21 @@
             background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             color: white;
             border-radius: 30px;
-            padding: 4rem;
+            padding: 3.5rem 2rem;
             text-align: center;
-            margin: 0 8% 6rem 8%;
+            margin: 0 8% 5rem 8%;
         }
 
         .connect-section h2 {
             font-size: 2.2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
+            gap: 1.5rem;
+            margin-top: 1.8rem;
             flex-wrap: wrap;
         }
 
@@ -702,7 +825,7 @@
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 8rem;
+                padding-top: 7rem;
             }
             .hero-buttons {
                 justify-content: center;
@@ -720,9 +843,13 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="#" class="logo">Coach Musfirah Akram</a>
+        <a href="#" class="logo-container">
+            <img src="https://i.ibb.co/1t6WfmJ3/Gemini-Generated-Image-hn3zcjhn3zcjhn3z-removebg-preview.png" alt="Leaders' Loom Logo" class="logo-img">
+            <span class="logo-text">Coach Musfirah Akram</span>
+        </a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#video-showcase">Featured Video</a></li>
             <li><a href="#programs">Courses & Programs</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#forms">Register</a></li>
@@ -734,9 +861,12 @@
     <!-- Hero Section -->
     <section class="hero" id="about">
         <div class="hero-content">
-            <span class="badge"><i class="fa-solid fa-brain"></i> Leaders' Loom</span>
+            <span class="badge">
+                <img src="https://i.ibb.co/1t6WfmJ3/Gemini-Generated-Image-hn3zcjhn3zcjhn3z-removebg-preview.png" alt="Logo" style="height: 20px; width: auto;">
+                Leaders' Loom
+            </span>
             <h1>Musfirah Akram</h1>
-            <h2>Mindframe & Parenting Strategist | Belief Transformation Specialist</h2>
+            <h2>Mindframe & Parenting Strategist</h2>
             <p>Helping individuals and families break limiting beliefs, heal emotional pain, shift perspectives, and build lives rooted in purpose, clarity, alignment, and faith.</p>
             
             <div class="credentials-pills">
@@ -772,11 +902,40 @@
         </div>
     </section>
 
+    <!-- Full Width Video Showcase Section (Clean White Background Theme) -->
+    <section class="video-section-fullwidth" id="video-showcase">
+        <div class="video-section-header">
+            
+        </div>
+
+        <div class="fullwidth-video-wrapper">
+            <video id="scrollVideo" muted playsinline loop controls poster="https://i.ibb.co/FLyTqvFF/Gemini-Generated-Image-zdtfgjzdtfgjzdtf.png">
+                <source src="https://d2n7fc0kw20ri7.cloudfront.net/33ypo%2Fpreview%2F80095323%2Fmain_x360.mp4?response-content-disposition=inline%3Bfilename%3D%22main_x360.mp4%22%3B&response-content-type=video%2Fmp4&Expires=1786365057&Signature=U7p7y7RCjWFiLI9JyXvXPjymrsnKnYo6T3YcecBXLtuM~7wXnICEAPmjySujQ-LkAPFvCjaXzPNMWCvopoU7bukCMaNMcviyjVpq5~EO1bi09hxd~AzG20QuucxPiuggPfJ6rJRKsGLjgAIEhXXnOSTL3wHC2vaaEGUp7gbzG~DiwFAKSagdUHj7qH5A5OkBHj5rULRvltannf7Dw-vg3TXWklvwX3YyNdBQUVjUovvWOL-dBAMyA5SamUAugdGxVFcxxd2RAq5u9RXTtDJgetqo-Be3vsRpnRG2L1haS1OW3nBQwh46qAR33c-rPEYBbYFDjmHEY0QMwXkO7QHrvg__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="video-overlay-bar">
+            <div class="video-overlay-info">
+                <h3><i class="fa-solid fa-circle-play"></i> Workshop & Session Highlights</h3>
+                <p>Insights into mindframe transformation, parenting strategies, and integrated Quranic learning.</p>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                <button class="sound-toggle-btn" id="soundToggleBtn" onclick="toggleMute()">
+                    <i class="fa-solid fa-volume-xmark" id="soundIcon"></i> <span id="soundText">Unmute Sound</span>
+                </button>
+                <a href="https://wa.me/923350253872" target="_blank" class="btn">
+                    <i class="fa-brands fa-whatsapp"></i> Join Next Live Session
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Programs & Courses Offered -->
     <section class="section" id="programs">
         <div class="section-title">
             <h2>Featured Programs & Courses</h2>
-            <p>Click on any program to view complete details, schedule, pricing, and curriculum.</p>
+            <p>Click on any program tab to view complete details, schedule, pricing, and curriculum.</p>
         </div>
 
         <div class="programs-grid">
@@ -788,8 +947,47 @@
                     <span class="card-tag-badge">Ages 6–12</span>
                 </div>
                 <h3>Wisdom Weavers</h3>
-                <div class="price-tag">RS 7,500 / month <span style="text-decoration: line-through; color: #94A3B8; font-size: 0.85rem;">RS 10,000</span> (35% OFF)</div>
+                <div class="price-tag">RS 10,000 / month <span style="text-decoration: line-through; color: #94A3B8; font-size: 0.85rem;">RS 15,000</span> (Discounted Offer)</div>
                 <p>Integrated learning through Quran for kids aged 6–12 years. Linking Science, Math, Languages, and Character building.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <!-- Parenting Strategist Tab -->
+            <div class="program-card" onclick="openModal('parenting')">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800" alt="Parenting Strategy">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">Parenting</span>
+                </div>
+                <h3>Parenting & Connection Strategy</h3>
+                <div class="price-tag">Parenting Workshops & Consultations</div>
+                <p>Equipping parents with conscious parenting techniques, emotional regulation, and deep connection with children.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <!-- Homeschooling Tab -->
+            <div class="program-card" onclick="openModal('homeschooling')">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" alt="Homeschooling Mentorship">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">Homeschooling</span>
+                </div>
+                <h3>Homeschooling Mentorship</h3>
+                <div class="price-tag">Curriculum Design & Guidance</div>
+                <p>Practical strategies, holistic curriculum planning, and mindset alignment for mothers embarking on homeschooling.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <!-- 1-on-1 Sessions -->
+            <div class="program-card" onclick="openModal('one-on-one')">
+                <div class="card-img-container">
+                    <img src="https://i.ibb.co/P0Dn7vD/1000384494.jpg" alt="1-on-1 Coaching Session">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">1-on-1 Consultation</span>
+                </div>
+                <h3>1-on-1 Consultation Sessions</h3>
+                <div class="price-tag">RS 7,500 / Session</div>
+                <p>Personalized mentorship focused on mindframe transformation, mental emotional well-being, purpose discovery, and parenting/homeschooling support.</p>
                 <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
@@ -803,19 +1001,6 @@
                 <h3>KIRDAR - The Mirror Within</h3>
                 <div class="price-tag">RS 8,000 <span style="text-decoration: line-through; color: #94A3B8; font-size: 0.85rem;">RS 12,000</span></div>
                 <p>Your Intentions. Your Character. Your Reality. A dedicated program for belief transformation and perspective shifts.</p>
-                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
-            </div>
-
-            <!-- 1-on-1 Sessions -->
-            <div class="program-card" onclick="openModal('one-on-one')">
-                <div class="card-img-container">
-                    <img src="https://i.ibb.co/P0Dn7vD/1000384494.jpg" alt="1-on-1 Coaching Session">
-                    <div class="card-img-overlay"></div>
-                    <span class="card-tag-badge">1-on-1 Coaching</span>
-                </div>
-                <h3>1-on-1 Coaching Sessions</h3>
-                <div class="price-tag">Online & In-Person Sessions Available</div>
-                <p>Personalized mentorship focused on belief transformation, mental emotional well-being, purpose discovery, and homeschooling support.</p>
                 <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
@@ -834,11 +1019,11 @@
         </div>
     </section>
 
-    <!-- Testimonials Section (100% Text Mode, Interactive Cards) -->
+    <!-- Testimonials Section -->
     <section class="section" id="testimonials" style="background: rgba(108, 92, 231, 0.03);">
         <div class="section-title">
             <h2>Community Feedback & Reviews</h2>
-            <p>Real experiences and heartfelt thoughts shared by participants of our sessions and workshops.</p>
+            <p>Real experiences and heartfelt thoughts shared by participants across all our sessions and workshops.</p>
         </div>
 
         <div class="testimonials-grid">
@@ -870,7 +1055,7 @@
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                     <div class="testimonial-text">
-                        "Thank you for the session. I really appreciate your dedication and effort — it's inspiring. You gave me ample time, and your friendly vibe made me feel comfortable right away."
+                        "Thank you for the session. I really appreciate your dedication and effort — it's inspiring. You gave me ample time, and your friendly vibe made me feel comfortable right away. I didn't feel disconnected at all. Great experience! 😊"
                     </div>
                 </div>
                 <div class="testimonial-author">
@@ -890,7 +1075,7 @@
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                     <div class="testimonial-text">
-                        "JazakAllahu Khairan for such an informative and engaging session! The kids truly enjoyed it. The Kahoot was exciting, and the activity kept them curious."
+                        "JazakAllahu Khairan for such an informative and engaging session! 🌸 The kids truly enjoyed it. The Kahoot was exciting, the question-based activity kept them curious, and your clear explanations made everything easy to understand. Looking forward to another wonderful session, In shaa Allah!"
                     </div>
                 </div>
                 <div class="testimonial-author">
@@ -910,14 +1095,14 @@
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                     <div class="testimonial-text">
-                        "Alhamdulillah, today's Surah Fatiha session for kids was truly beneficial. The teacher kept the children engaged through interactive discussions and simple explanations."
+                        "Very nice, Jazakallah! Looking forward to another wonderful session."
                     </div>
                 </div>
                 <div class="testimonial-author">
-                    <div class="author-avatar">S</div>
+                    <div class="author-avatar">Z</div>
                     <div class="author-info">
-                        <h4>Sidra Arshad</h4>
-                        <span>Parent & Community Member</span>
+                        <h4>Zunaira Fahad</h4>
+                        <span>Leaders' Loom Member</span>
                     </div>
                 </div>
             </div>
@@ -930,14 +1115,14 @@
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                     <div class="testimonial-text">
-                        "Allah subhana o ta'ala AP ko bhot bhot jaza e kher den. Ma sha Allah Bhot hi zaberdest session tha. Sb sy achi bat k ap ny pur hikmat our peyary andaz sy bachon ko track py rkha."
+                        "Alhamdulillah, today's Surah Fatiha session for kids was truly beneficial. 🌸 The teacher kept the children engaged through interactive discussions and simple explanations. It was heartwarming to see them learning Qur'an with so much interest in an online environment."
                     </div>
                 </div>
                 <div class="testimonial-author">
                     <div class="author-avatar">S</div>
                     <div class="author-info">
-                        <h4>Sumeera Usman</h4>
-                        <span>Leaders' Loom Member</span>
+                        <h4>Sidra Arshad</h4>
+                        <span>Parent & Community Member</span>
                     </div>
                 </div>
             </div>
@@ -950,7 +1135,27 @@
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                     <div class="testimonial-text">
-                        "Jazakillahu khairaa for conducting such an amazing session. It was very interactive, kids were continuously engaged, and activities were so unique MashaAllah."
+                        "Allah subhana o ta'ala AP ko bhot bhot jaza e kher den. Ma sha Allah gi Bhot hi zaberdest session tha. Sb sy achi bat k ap ny bhot hi pur hikmat our peyary andaz sy bachon ko track py rkha."
+                    </div>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">S</div>
+                    <div class="author-info">
+                        <h4>Sumeera Usman</h4>
+                        <span>Leaders' Loom Member</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 7 -->
+            <div class="testimonial-card">
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Jazakillahu khairaa for conducting such an amazing session 🌸. It was very interactive, kids were continuously engaged, and activities were so unique MashaAllah."
                     </div>
                 </div>
                 <div class="testimonial-author">
@@ -968,32 +1173,35 @@
     <section class="section" id="forms">
         <div class="section-title">
             <h2>Registration Forms</h2>
-            <p>Select a program below to open the official Google Form registration.</p>
+            <p>Select a program below to open the official Google Form registration with course names.</p>
         </div>
 
         <div class="forms-grid">
             <div class="form-card">
                 <div>
-                    <h3>Registration Form 1</h3>
-                    <p>Apply directly for upcoming sessions and workshops.</p>
+                    <span class="form-card-badge">Course 1</span>
+                    <h3>Wisdom Weavers & Kids Programs</h3>
+                    <p>Apply for Wisdom Weavers (Integrated Learning Through Quran) & Kids Workshops.</p>
                 </div>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFRWwQcAisuCOtdm5hafbh6Sm6Ftw0YuPB46EftyX-XSmx0Q/viewform?usp=publish-editor" target="_blank" class="btn">Open Form <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; margin-left: 0.3rem;"></i></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFRWwQcAisuCOtdm5hafbh6Sm6Ftw0YuPB46EftyX-XSmx0Q/viewform?usp=publish-editor" target="_blank" class="btn">Open Registration Form <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i></a>
             </div>
 
             <div class="form-card">
                 <div>
-                    <h3>Registration Form 2</h3>
-                    <p>Register for specialized coaching & mentorship programs.</p>
+                    <span class="form-card-badge">Course 2</span>
+                    <h3>KIRDAR & Mindframe Transformation</h3>
+                    <p>Register for KIRDAR - The Mirror Within & Mindset Transformation Coaching.</p>
                 </div>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSejSfi4xO1i31ky4v5al-l5lJRXkpiYQ1y2FxYSLqZsadOgHA/viewform?usp=publish-editor" target="_blank" class="btn">Open Form <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; margin-left: 0.3rem;"></i></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSejSfi4xO1i31ky4v5al-l5lJRXkpiYQ1y2FxYSLqZsadOgHA/viewform?usp=publish-editor" target="_blank" class="btn">Open Registration Form <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i></a>
             </div>
 
             <div class="form-card">
                 <div>
-                    <h3>Registration Form 3</h3>
-                    <p>General enrollment and query submission form.</p>
+                    <span class="form-card-badge">Course 3</span>
+                    <h3>Parenting, Homeschooling & 1-on-1 Consultation</h3>
+                    <p>General Enrollment Form for 1-on-1 Consultations, Parenting, & Homeschooling Mentorship.</p>
                 </div>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScvADYqGs7x-2y2ny86qakxSbj5GI1BJnSwQ351uW6zgG-1pg/viewform?usp=header" target="_blank" class="btn">Open Form <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; margin-left: 0.3rem;"></i></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScvADYqGs7x-2y2ny86qakxSbj5GI1BJnSwQ351uW6zgG-1pg/viewform?usp=header" target="_blank" class="btn">Open Registration Form <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i></a>
             </div>
         </div>
     </section>
@@ -1001,8 +1209,8 @@
     <!-- Social Media Section -->
     <section class="section" id="social" style="padding-top: 2rem;">
         <div class="section-title">
-            <h2>Featured Videos & Content</h2>
-            <p>Watch latest highlights, reels, and video posts from Coach Musfirah Akram.</p>
+            <h2>Social Media Highlights</h2>
+            <p>Watch latest posts, reels, and video updates directly on Facebook.</p>
         </div>
 
         <div class="social-grid">
@@ -1041,7 +1249,7 @@
             </div>
             <div class="modal-header">
                 <div>
-                    <h3 id="modalTitle" style="font-size: 1.6rem; color: var(--dark);"></h3>
+                    <h3 id="modalTitle" style="font-size: 1.5rem; color: var(--dark);"></h3>
                     <span id="modalTag" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;"></span>
                 </div>
             </div>
@@ -1050,7 +1258,7 @@
 
                 <p id="modalDescription" style="color: #475569; font-size: 0.95rem;"></p>
                 
-                <h4>Key Highlights & Curriculum:</h4>
+                <h4>Key Highlights & Features:</h4>
                 <ul id="modalHighlights"></ul>
 
                 <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -1081,17 +1289,61 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Coach Musfirah Akram. All rights reserved.</p>
+        <p>&copy; 2026 Coach Musfirah Akram | Leaders' Loom. All rights reserved.</p>
     </footer>
 
     <script>
+        // Scroll Autoplay via Intersection Observer API
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('scrollVideo');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4 // Play video when 40% visible in viewport
+            };
+
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        video.play().catch(error => {
+                            console.log('Autoplay deferred or prevented by browser policy:', error);
+                        });
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, observerOptions);
+
+            if (video) {
+                videoObserver.observe(video);
+            }
+        });
+
+        // Unmute / Mute Audio Toggle
+        function toggleMute() {
+            const video = document.getElementById('scrollVideo');
+            const icon = document.getElementById('soundIcon');
+            const text = document.getElementById('soundText');
+
+            if (video.muted) {
+                video.muted = false;
+                icon.className = 'fa-solid fa-volume-high';
+                text.innerText = 'Mute Sound';
+            } else {
+                video.muted = true;
+                icon.className = 'fa-solid fa-volume-xmark';
+                text.innerText = 'Unmute Sound';
+            }
+        }
+
         // Program Data Details
         const programData = {
             'wisdom-weavers': {
                 title: 'Wisdom Weavers (Integrated Learning Through Quran)',
                 tag: 'Age Group: 6–12 Years',
                 img: 'https://lh3.googleusercontent.com/pw/AP1GczNtANnkHMGzKV_GwR2P_jPxpZuvXQxyTMNcT509SHA66Pfcb2FJ4znHR9BuD_1sAvHNWlWjlXA9W6VBQq87zCeFU4osq7VzyLKlDAVRm-33djt6tptP6ZeelDVqox0PY86dZ32vGqEDI1_WDiZ1Nz8I=w493-h739-s-no-gm?authuser=0',
-                meta: '<strong>Start Date:</strong> August 4th | <strong>Schedule:</strong> Tuesdays & Thursdays (8 Sessions) | <strong>Timing:</strong> 4:30 – 5:15 PM PST | <strong>Fee:</strong> RS 7,500/month (Actual RS 10,000 - 35% Discount) | <strong>Platform:</strong> Online via Zoom (Kahoot Interactive)',
+                meta: '<strong>Actual Fee:</strong> RS 15,000 | <strong>Discounted Fee:</strong> RS 10,000 / month | <strong>Schedule:</strong> Tuesdays & Thursdays | <strong>Platform:</strong> Online via Zoom',
                 description: 'An integrated learning experience linking core subjects to Quranic principles, helping children develop strong character, wise decision-making, and daily fruitful habits.',
                 highlights: [
                     'Science from Quran: Relating scientific concepts with Quranic verses.',
@@ -1102,33 +1354,57 @@
                     'Character Pillars: Wise choices, strong character, decision-making power, and fruitful habits.'
                 ]
             },
+            'parenting': {
+                title: 'Parenting & Connection Strategy',
+                tag: 'Parenting Workshop & Mentorship',
+                img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800',
+                meta: '<strong>Specialist:</strong> Mindframe & Parenting Strategist | <strong>Format:</strong> Group Workshops & 1:1 Consultations',
+                description: 'Empowering parents with effective tools to nurture emotional intelligence, build mutual trust, and resolve conflicts calmly.',
+                highlights: [
+                    'Understanding child psychology and emotional triggers.',
+                    'Replacing reactive discipline with empathetic connection.',
+                    'Building strong Islamic character and values at home.',
+                    'Effective communication strategies for children of all ages.'
+                ]
+            },
+            'homeschooling': {
+                title: 'Homeschooling Mentorship & Strategy',
+                tag: 'Homeschooling Guidance',
+                img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800',
+                meta: '<strong>Specialist:</strong> Homeschooling Mama & Educator | <strong>Format:</strong> Customized Guidance',
+                description: 'Step-by-step guidance for mothers who want to start or structure their homeschooling journey with clarity and confidence.',
+                highlights: [
+                    'Custom curriculum selection tailored to child interest.',
+                    'Creating an engaging and stress-free learning environment.',
+                    'Integrating Faith, Science, and Life Skills in daily routines.',
+                    'Time management and balancing home responsibilities.'
+                ]
+            },
+            'one-on-one': {
+                title: '1-on-1 Consultation Sessions',
+                tag: 'Personalized Coaching',
+                img: 'https://i.ibb.co/P0Dn7vD/1000384494.jpg',
+                meta: '<strong>Consultation Fee:</strong> RS 7,500 / Session | <strong>Format:</strong> Online & In-Person Sessions Available',
+                description: 'Tailored individual coaching sessions providing direct guidance and safe space to heal, re-align, and navigate life challenges.',
+                highlights: [
+                    'Mindframe Reset & Belief Transformation.',
+                    'Parenting Support & Guidance for mothers.',
+                    'Purpose Discovery & Life Alignment.',
+                    'Mental & Emotional Well-Being.',
+                    'Homeschooling Mentorship & Strategy.'
+                ]
+            },
             'kirdar': {
                 title: 'KIRDAR - The Mirror Within',
                 tag: 'Belief Transformation Program',
                 img: 'https://lh3.googleusercontent.com/pw/AP1GczMc04vgBpCsFcs1LQnoITv5HxeNAXJBN6F5O6QsCqK7TCts4dgCprFuKCMwcC_Qw8xKy0W2BsBPP6G7rtZmwsNzEu3UfDNR3TZO0stwxZDaW27oerieyHOEBYX55HuSf2rjqBffRoA3KCiQuClDXNoe=w493-h739-s-no-gm?authuser=0',
-                meta: '<strong>Start Date:</strong> Starting from 7th of July | <strong>Schedule:</strong> Tuesdays and Thursdays | <strong>Discounted Price:</strong> RS 8,000 (Actual: RS 12,000) | <strong>Contact:</strong> +92 335 0253872',
-                description: 'A transformative course designed by Musfirah Akram to help individuals challenge limiting beliefs, shift perspective, and build unshakeable character (Kirdar). What lives within you shapes how you see life.',
+                meta: '<strong>Discounted Price:</strong> RS 8,000 (Actual: RS 12,000) | <strong>Schedule:</strong> Tuesdays & Thursdays',
+                description: 'A transformative course designed by Musfirah Akram to help individuals challenge limiting beliefs, shift perspective, and build unshakeable character (Kirdar).',
                 highlights: [
                     'Intentions, Thoughts, Actions, Habits, Character, & Destiny framework.',
                     'Sincere Intentions bring Allah’s pleasure and inner peace.',
                     'Pure Heart leads to truthful words and actions.',
-                    'Strong Kirdar builds trust, respect, and impact.',
-                    'Beautiful Legacy is left by those who work on themselves.'
-                ]
-            },
-            'one-on-one': {
-                title: '1-on-1 Coaching & Mentorship',
-                tag: 'Personalized Coaching',
-                img: 'https://i.ibb.co/P0Dn7vD/1000384494.jpg',
-                meta: '<strong>Format:</strong> Online & In-Person Sessions Available | <strong>Specialist:</strong> Mindframe & Parenting Strategist',
-                description: 'Tailored individual coaching sessions providing direct guidance and safe space to heal, re-align, and navigate life challenges.',
-                highlights: [
-                    'Belief Transformation & Mindset Reset.',
-                    'Parenting Support & Guidance for mothers.',
-                    'Purpose Discovery & Life Clarity.',
-                    'Mental Emotional & Emotional Well-Being.',
-                    'Homeschooling Support & Resources.',
-                    '1:1 Intensive Coaching tailored to individual goals.'
+                    'Strong Kirdar builds trust, respect, and impact.'
                 ]
             },
             'ramadan-series': {
@@ -1138,11 +1414,9 @@
                 meta: '<strong>Format:</strong> Interactive Workshops, Games & Storytelling',
                 description: 'A dedicated series designed to help children and families understand the essence of Ramadan through interactive learning, science filters, and practical deeds.',
                 highlights: [
-                    'What is Ramadhan?: Meaning, fasting purpose, patience, gratitude, and Taqwa.',
-                    'Blessings of Ramadhan: Laylat-ul-Qadr, rewards, and kindness challenges.',
+                    'What is Ramadhan?: Meaning, fasting purpose, patience, and Taqwa.',
                     'Hidayah (Science Link): Listening to the right voice and tuning out negative influences.',
-                    'Furqaan (Life Filter Activity): Quran as a life filter to separate truth from falsehood.',
-                    'Battle of Badr & Historical Milestones: Lessons from Yaum-ul-Furqaan.'
+                    'Furqaan (Life Filter Activity): Quran as a life filter to separate truth from falsehood.'
                 ]
             }
         };
