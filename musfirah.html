@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coach Musfirah Akram | Belief Transformation & Perspective Shift Specialist</title>
+    <title>Coach Musfirah Akram | Mindframe & Parenting Strategist</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
@@ -122,14 +122,14 @@
         .hero h1 {
             font-size: 3rem;
             line-height: 1.2;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             background: linear-gradient(135deg, var(--dark), var(--primary-dark));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero h2 {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--primary);
             margin-bottom: 1rem;
             font-weight: 600;
@@ -163,7 +163,6 @@
             gap: 1rem;
         }
 
-        /* Interactive Hero Image Container */
         .hero-image-container {
             flex: 1;
             display: flex;
@@ -287,7 +286,6 @@
             background: linear-gradient(90deg, var(--primary), var(--accent));
         }
 
-        /* Interactive Program Card Image */
         .card-img-container {
             width: 100%;
             height: 240px;
@@ -367,70 +365,115 @@
             gap: 0.5rem;
         }
 
-        /* Testimonials Section */
+        /* Text-Only Interactive Testimonials Section */
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
         .testimonial-card {
             background: var(--card-bg);
-            border-radius: 20px;
-            padding: 2rem;
+            border-radius: 24px;
+            padding: 2.2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(108, 92, 231, 0.08);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.12);
+            border-color: rgba(108, 92, 231, 0.25);
+        }
+
+        .testimonial-card:hover::before {
+            opacity: 1;
+        }
+
+        .quote-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            opacity: 0.3;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .testimonial-card:hover .quote-icon {
+            transform: scale(1.15) rotate(-5deg);
+            opacity: 0.8;
+        }
+
+        .rating-stars {
+            color: #FFB800;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            gap: 0.2rem;
         }
 
         .testimonial-text {
-            font-size: 0.95rem;
-            color: #475569;
-            font-style: italic;
-            margin-bottom: 1.5rem;
+            font-size: 0.98rem;
+            color: #334155;
+            line-height: 1.65;
+            margin-bottom: 1.8rem;
+            font-style: normal;
+            font-weight: 400;
             position: relative;
-        }
-
-        .testimonial-text::before {
-            content: '"';
-            font-size: 3rem;
-            color: var(--secondary);
-            position: absolute;
-            top: -1.5rem;
-            left: -1rem;
-            opacity: 0.3;
+            z-index: 1;
         }
 
         .testimonial-author {
             display: flex;
             align-items: center;
             gap: 1rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #F1F5F9;
         }
 
         .author-avatar {
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            background: var(--primary-dark);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
             font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.25);
+            flex-shrink: 0;
         }
 
         .author-info h4 {
             font-size: 1rem;
             color: var(--dark);
+            font-weight: 700;
         }
 
         .author-info span {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: #64748B;
+            font-weight: 500;
         }
 
         /* Modal Styles */
@@ -693,15 +736,15 @@
         <div class="hero-content">
             <span class="badge"><i class="fa-solid fa-brain"></i> Leaders' Loom</span>
             <h1>Musfirah Akram</h1>
-            <h2>Belief Transformation & Perspective Shift Specialist</h2>
+            <h2>Mindframe & Parenting Strategist | Belief Transformation Specialist</h2>
             <p>Helping individuals and families break limiting beliefs, heal emotional pain, shift perspectives, and build lives rooted in purpose, clarity, alignment, and faith.</p>
             
             <div class="credentials-pills">
-                <span class="pill"><i class="fa-solid fa-certificate"></i> American Board Certified NLP Practitioner</span>
+                <span class="pill"><i class="fa-solid fa-certificate"></i> NLP Practitioner (American Board Certified)</span>
                 <span class="pill"><i class="fa-solid fa-microscope"></i> Biomedical Engineer</span>
+                <span class="pill"><i class="fa-solid fa-microphone-lines"></i> Stage Master & Speaker</span>
                 <span class="pill"><i class="fa-solid fa-award"></i> Tabdeelian Certified Trainer</span>
                 <span class="pill"><i class="fa-solid fa-house-user"></i> Homeschooling Mama</span>
-                <span class="pill"><i class="fa-solid fa-comments"></i> Speaker & Writer</span>
             </div>
 
             <div class="hero-buttons">
@@ -712,14 +755,16 @@
             </div>
         </div>
         
-        <!-- Camera-Style Real Hero Image -->
+        <!-- Hero Portrait Image -->
         <div class="hero-image-container">
             <div class="interactive-hero-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" alt="Coach Musfirah Akram Real Portrait">
+                <a href="https://ibb.co/S7HhT0bL" target="_blank">
+                    <img src="https://i.ibb.co/FLyTqvFF/Gemini-Generated-Image-zdtfgjzdtfgjzdtf.png" alt="Coach Musfirah Akram Portrait">
+                </a>
                 <div class="hero-img-badge">
                     <i class="fa-solid fa-heart-pulse"></i>
                     <div class="hero-img-badge-text">
-                        Mindset & Belief Transformation
+                        Mindframe & Parenting Strategist
                         <br><span style="color: #64748B; font-weight: 400;">Empowering lives with purpose & clarity</span>
                     </div>
                 </div>
@@ -764,7 +809,7 @@
             <!-- 1-on-1 Sessions -->
             <div class="program-card" onclick="openModal('one-on-one')">
                 <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800" alt="1-on-1 Coaching Session">
+                    <img src="https://i.ibb.co/P0Dn7vD/1000384494.jpg" alt="1-on-1 Coaching Session">
                     <div class="card-img-overlay"></div>
                     <span class="card-tag-badge">1-on-1 Coaching</span>
                 </div>
@@ -789,48 +834,129 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials Section (100% Text Mode, Interactive Cards) -->
     <section class="section" id="testimonials" style="background: rgba(108, 92, 231, 0.03);">
         <div class="section-title">
             <h2>Community Feedback & Reviews</h2>
-            <p>Real experiences shared by participants of our introductory sessions and courses.</p>
+            <p>Real experiences and heartfelt thoughts shared by participants of our sessions and workshops.</p>
         </div>
 
         <div class="testimonials-grid">
+            <!-- Review 1 -->
             <div class="testimonial-card">
-                <div class="testimonial-text">
-                    "Musfirah ap ka intro session kirdar per buhot acha tha Ma Sha Allah. Eye opening session tha jisne mere mindset ko ak new angle se dekhne ka moqa diya Alhamdulillah. I highly recommend this course to everyone."
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "It was good and helpful. I was able to see new perspectives of positive thinking. The goal we worked on was able to achieve alhamdulillah."
+                    </div>
                 </div>
                 <div class="testimonial-author">
-                    <div class="author-avatar">U</div>
+                    <div class="author-avatar">C</div>
                     <div class="author-info">
-                        <h4>Umm e Faisal</h4>
-                        <span>KIRDAR Intro Session Participant</span>
+                        <h4>Client Feedback</h4>
+                        <span>Perspective Transformation Session</span>
                     </div>
                 </div>
             </div>
 
+            <!-- Review 2 -->
             <div class="testimonial-card">
-                <div class="testimonial-text">
-                    "It was a great session, very thought provoking! The reflection questions help you come out of your comfort zone and find out what is stopping you from achieving your goals."
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Thank you for the session. I really appreciate your dedication and effort — it's inspiring. You gave me ample time, and your friendly vibe made me feel comfortable right away."
+                    </div>
                 </div>
                 <div class="testimonial-author">
-                    <div class="author-avatar">R</div>
+                    <div class="author-avatar">S</div>
                     <div class="author-info">
-                        <h4>Reja Humayun</h4>
-                        <span>Leaders' Loom Member</span>
+                        <h4>Session Participant</h4>
+                        <span>1-on-1 Mentorship Session</span>
                     </div>
                 </div>
             </div>
 
+            <!-- Review 3 -->
             <div class="testimonial-card">
-                <div class="testimonial-text">
-                    "A really wonderful session MashaAllah. Reflective, thought provoking, interactive session."
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "JazakAllahu Khairan for such an informative and engaging session! The kids truly enjoyed it. The Kahoot was exciting, and the activity kept them curious."
+                    </div>
                 </div>
                 <div class="testimonial-author">
                     <div class="author-avatar">M</div>
                     <div class="author-info">
                         <h4>Maryum Akram</h4>
+                        <span>Leaders' Loom Member</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="testimonial-card">
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Alhamdulillah, today's Surah Fatiha session for kids was truly beneficial. The teacher kept the children engaged through interactive discussions and simple explanations."
+                    </div>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">S</div>
+                    <div class="author-info">
+                        <h4>Sidra Arshad</h4>
+                        <span>Parent & Community Member</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 5 -->
+            <div class="testimonial-card">
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Allah subhana o ta'ala AP ko bhot bhot jaza e kher den. Ma sha Allah Bhot hi zaberdest session tha. Sb sy achi bat k ap ny pur hikmat our peyary andaz sy bachon ko track py rkha."
+                    </div>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">S</div>
+                    <div class="author-info">
+                        <h4>Sumeera Usman</h4>
+                        <span>Leaders' Loom Member</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 6 -->
+            <div class="testimonial-card">
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Jazakillahu khairaa for conducting such an amazing session. It was very interactive, kids were continuously engaged, and activities were so unique MashaAllah."
+                    </div>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">R</div>
+                    <div class="author-info">
+                        <h4>Reja Humayun</h4>
                         <span>Leaders' Loom Member</span>
                     </div>
                 </div>
@@ -911,7 +1037,7 @@
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-header-img">
-                <img id="modalImg" src="" alt="Program Detail Camera Shot">
+                <img id="modalImg" src="" alt="Program Detail">
             </div>
             <div class="modal-header">
                 <div>
@@ -939,7 +1065,7 @@
     <!-- Connect Banner -->
     <div class="connect-section" id="connect">
         <h2>Connect with Coach Musfirah Akram</h2>
-        <p>Leaders' Loom | Belief Transformation & Perspective Shift Specialist</p>
+        <p>Leaders' Loom | Mindframe & Parenting Strategist</p>
         
         <div class="contact-info">
             <a href="https://wa.me/923350253872" target="_blank" class="contact-btn">
@@ -959,7 +1085,7 @@
     </footer>
 
     <script>
-        // Program Data Details with Real Poster Images
+        // Program Data Details
         const programData = {
             'wisdom-weavers': {
                 title: 'Wisdom Weavers (Integrated Learning Through Quran)',
@@ -993,8 +1119,8 @@
             'one-on-one': {
                 title: '1-on-1 Coaching & Mentorship',
                 tag: 'Personalized Coaching',
-                img: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800',
-                meta: '<strong>Format:</strong> Online & In-Person Sessions Available | <strong>Specialist:</strong> Belief Transformation & Perspective Shift Specialist',
+                img: 'https://i.ibb.co/P0Dn7vD/1000384494.jpg',
+                meta: '<strong>Format:</strong> Online & In-Person Sessions Available | <strong>Specialist:</strong> Mindframe & Parenting Strategist',
                 description: 'Tailored individual coaching sessions providing direct guidance and safe space to heal, re-align, and navigate life challenges.',
                 highlights: [
                     'Belief Transformation & Mindset Reset.',
